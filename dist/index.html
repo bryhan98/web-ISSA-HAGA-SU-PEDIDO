@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Catálogo mayorista de Distribuidora ISSA. Armá tu pedido, descargá la boleta y enviala por WhatsApp.">
+  <meta name="author" content="Braian Lezcano">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/favicon-256.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <title>Distribuidora ISSA | Hacé tu pedido</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Distribuidora ISSA, inicio">
+      <span class="brand-logo-box"><img src="assets/issa-logo.png" alt="Distribuidora ISSA"></span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#catalogo">Ofertas</a>
+      <a href="#catalogo-completo">Catálogo completo</a>
+      <a href="#como-comprar">Cómo comprar</a>
+    </nav>
+    <button class="cart-button" id="openCart" type="button" aria-label="Abrir pedido">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 7H7M10 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
+      <span>Mi pedido</span><b id="cartCount">0</b>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> MAYORISTA · ZONA OESTE</p>
+        <h1>Todo para tu negocio,<br><em>en un solo pedido.</em></h1>
+        <p class="hero-text">Elegí los productos, indicá las cantidades y generá tu boleta. Un vendedor revisa el pedido antes de enviarlo a la distribuidora.</p>
+        <div class="hero-actions">
+          <a class="primary" href="#catalogo">Ver catálogo <span>↓</span></a>
+          <button class="secondary" id="heroCart" type="button">Continuar pedido</button>
+        </div>
+        <div class="trust-row">
+          <span><b id="offerCount">63</b> ofertas disponibles</span>
+          <span><b>PDF</b> boleta automática</span>
+          <span><b>✓</b> revisión del vendedor</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Selección de ofertas de Distribuidora ISSA">
+        <div class="glow"></div>
+        <img class="hero-card hero-card-back" src="assets/products/124.webp" alt="Oferta mayorista de arroz">
+        <img class="hero-card hero-card-main" src="assets/products/010.webp" alt="Oferta mayorista Billiken Gongys">
+        <div class="floating-note"><span>Pedido simple</span><strong>Elegí · Revisá · Enviá</strong></div>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span></span> OFERTAS DE LA SEMANA</p>
+          <h2>Elegí entre las ofertas vigentes</h2>
+        </div>
+        <p>Los precios y presentaciones se muestran en cada imagen. El vendedor confirma disponibilidad y total final.</p>
+      </div>
+
+      <div class="catalog-tools">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="searchInput" type="search" placeholder="Buscar producto, marca o código..." autocomplete="off">
+        </label>
+        <div class="chips" id="categoryChips" aria-label="Filtrar por categoría"></div>
+      </div>
+
+      <div class="results-line"><span id="resultsCount">63 productos</span><button id="clearSearch" type="button" hidden>Limpiar búsqueda</button></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <strong>No encontramos ese producto</strong>
+        <span>Probá con otra marca, categoría o código.</span>
+      </div>
+    </section>
+
+    <section class="catalog-section full-catalog-section" id="catalogo-completo">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span></span> CATÁLOGO COMPLETO · <b data-catalog-total>415</b> PRODUCTOS</p>
+          <h2><b data-catalog-total>415</b> productos ordenados para encontrar rápido</h2>
+        </div>
+        <p>Cada familia muestra todas sus variedades en la misma imagen. Al elegir, vas a ver la foto, el nombre, la presentación, el código y el precio de cada opción.</p>
+      </div>
+
+      <div class="batch-summary" aria-label="Resumen del catálogo completo">
+        <span><b data-catalog-total>415</b> productos disponibles</span>
+        <span><b data-catalog-families>189</b> fichas ordenadas</span>
+        <span><b data-catalog-categories>11</b> categorías</span>
+        <span><b>HD</b> fotos y variedades visibles</span>
+      </div>
+
+      <div class="catalog-tools">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="catalogSearchInput" type="search" placeholder="Buscar en el catálogo por producto, marca o código..." autocomplete="off">
+        </label>
+        <div class="chips" id="catalogCategoryChips" aria-label="Filtrar catálogo por categoría"></div>
+      </div>
+
+      <div class="results-line"><span id="catalogResultsCount">340 productos</span><button id="clearCatalogSearch" type="button" hidden>Limpiar búsqueda</button></div>
+      <div class="catalog-groups" id="catalogProductGrid" aria-live="polite"></div>
+      <div class="empty-state" id="catalogEmptyState" hidden>
+        <strong>No encontramos ese producto</strong>
+        <span>Probá con otra marca, categoría o código.</span>
+      </div>
+    </section>
+
+    <section class="how-section" id="como-comprar">
+      <div>
+        <p class="eyebrow"><span></span> COMPRA MAYORISTA</p>
+        <h2>Tu pedido, claro desde el principio.</h2>
+        <p>Armalo cuando quieras. La selección queda guardada en este dispositivo hasta que decidas enviarla.</p>
+      </div>
+      <ol>
+        <li><b>01</b><span><strong>Elegí</strong>Sumá productos y cantidades.</span></li>
+        <li><b>02</b><span><strong>Completá</strong>Agregá los datos de tu comercio.</span></li>
+        <li><b>03</b><span><strong>Confirmá</strong>Descargá la boleta y enviala al vendedor.</span></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#inicio"><span class="brand-logo-box"><img src="assets/issa-logo.png" alt="Distribuidora ISSA"></span></a>
+    <p>Tu negocio, nuestra prioridad.</p>
+    <small>© 2026 Distribuidora ISSA · Todos los derechos reservados · Creado por Braian Lezcano · Pedidos: <a href="https://wa.me/5491168259465" target="_blank" rel="noopener">+54 9 11 6825-9465</a></small>
+  </footer>
+
+  <button class="mobile-cart" id="mobileCart" type="button"><span>Ver mi pedido</span><b id="mobileCartCount">0</b></button>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle">
+    <div class="drawer-head">
+      <div><p>RESUMEN</p><h2 id="cartTitle">Mi pedido</h2></div>
+      <button class="icon-button" id="closeCart" type="button" aria-label="Cerrar pedido">×</button>
+    </div>
+    <div class="cart-content" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">
+      <span class="empty-icon">＋</span>
+      <strong>Tu pedido está vacío</strong>
+      <p>Agregá productos del catálogo para comenzar.</p>
+      <button id="goCatalog" type="button">Ver catálogo</button>
+    </div>
+    <div class="cart-footer" id="cartFooter" hidden>
+      <div class="cart-total"><span>Total estimado</span><strong id="cartTotal">$0</strong></div>
+      <p class="price-note" id="priceNote">El vendedor confirmará disponibilidad y precio final.</p>
+      <button class="checkout-button" id="openCheckout" type="button">Completar pedido <span>→</span></button>
+      <button class="clear-cart" id="clearCart" type="button">Vaciar pedido</button>
+    </div>
+  </aside>
+
+  <dialog class="checkout-modal" id="checkoutModal">
+    <form id="checkoutForm" method="dialog">
+      <div class="modal-head">
+        <div><p>PASO FINAL</p><h2>Datos del pedido</h2></div>
+        <button class="icon-button" id="closeCheckout" type="button" aria-label="Cerrar">×</button>
+      </div>
+      <p class="modal-intro">Estos datos aparecerán en la boleta para que el vendedor pueda revisar y confirmar el pedido.</p>
+      <div class="form-grid">
+        <label><span>Nombre y apellido *</span><input name="name" required placeholder="Ej. Juan Pérez" autocomplete="name"></label>
+        <label><span>Comercio *</span><input name="business" required placeholder="Ej. Kiosco El Sol" autocomplete="organization"></label>
+        <label><span>Teléfono *</span><input name="phone" required inputmode="tel" placeholder="11 1234 5678" autocomplete="tel"></label>
+        <label><span>Localidad *</span><input name="city" required placeholder="Ej. Merlo" autocomplete="address-level2"></label>
+        <label class="full"><span>Dirección de entrega</span><input name="address" placeholder="Calle, número y entrecalles" autocomplete="street-address"></label>
+        <label class="full"><span>Observaciones generales</span><textarea name="notes" rows="3" placeholder="Horarios, referencias o aclaraciones..."></textarea></label>
+      </div>
+      <div class="pending-number"><b>Elegí cómo enviarlo</b><span>El pedido escrito va directo al vendedor. Para mandar la boleta PDF, el celular abrirá el menú Compartir: elegí WhatsApp y el chat del +54 9 11 6825-9465.</span></div>
+      <div class="checkout-actions">
+        <button class="send-button" type="submit">
+          <span class="action-label"><strong>Enviar pedido escrito por WhatsApp</strong><small>Cantidad, precio unitario, subtotal y total general</small></span><b>→</b>
+        </button>
+        <button class="share-pdf-button" id="sharePdf" type="button">
+          <span class="action-label"><strong>Compartir boleta PDF</strong><small>Elegí WhatsApp y enviala al 11 6825-9465</small></span><b>↗</b>
+        </button>
+        <button class="pdf-button" id="downloadPdfOnly" type="button">Descargar PDF en este dispositivo</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="variant-modal" id="variantModal">
+    <div class="variant-modal-head">
+      <div>
+        <p>ELEGÍ EL DETALLE</p>
+        <h2 id="variantTitle">Gustos y cantidades</h2>
+      </div>
+      <button class="icon-button" id="closeVariants" type="button" aria-label="Cerrar">×</button>
+    </div>
+    <div class="variant-product">
+      <img id="variantImage" src="" alt="">
+      <div>
+        <span id="variantCode"></span>
+        <strong id="variantProductName"></strong>
+        <small id="variantProductUnit">Podés combinar varios gustos en el mismo pedido.</small>
+      </div>
+    </div>
+    <div class="variant-list" id="variantList"></div>
+    <label class="variant-note">
+      <span>Aclaración opcional</span>
+      <input id="variantNote" type="text" placeholder="Ej. surtido, sin reemplazo, consultar stock">
+    </label>
+    <div class="variant-footer">
+      <div><span>Total seleccionado</span><strong id="variantTotalQty">0 unidades</strong></div>
+      <button id="saveVariants" type="button">Guardar en mi pedido <span>→</span></button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/pdf-lib.min.js"></script>
+  <script src="catalog-batch1.js"></script>
+  <script src="catalog-batch2.js"></script>
+  <script src="catalog-batch3.js"></script>
+  <script src="catalog-batch4.js"></script>
+  <script src="catalog-batch5.js"></script>
+  <script src="catalog-batch6.js"></script>
+  <script src="catalog-batch7.js"></script>
+  <script src="catalog-batch8.js"></script>
+  <script src="catalog-batch9.js"></script>
+  <script src="catalog-batch10.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
