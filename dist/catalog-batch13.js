@@ -1,0 +1,122 @@
+window.CATALOG_PRODUCTS_BATCH13 = [
+  {
+    "id": "catalog-nikitos-bolitas-dulces",
+    "code": "0499",
+    "codes": ["0499"],
+    "name": "Nikitos Bolitas Dulces",
+    "category": "Cereales y galletitas",
+    "price": 690,
+    "unit": "Bolsa 80 g · bulto x 30",
+    "image": "assets/catalog/variants/0499.jpg",
+    "variants": [],
+    "catalog": true,
+    "skuCount": 1,
+    "coverImages": [{"src": "assets/catalog/variants/0499.jpg", "label": "Bolitas dulces"}]
+  },
+  {
+    "id": "catalog-nikitos-pizzitos",
+    "code": "0435",
+    "codes": ["0435"],
+    "name": "Nikitos Pizzitos JyQ",
+    "category": "Cereales y galletitas",
+    "price": 690,
+    "unit": "Bolsa 80 g · bulto x 30",
+    "image": "assets/catalog/variants/0435.jpg",
+    "variants": [],
+    "catalog": true,
+    "skuCount": 1,
+    "coverImages": [{"src": "assets/catalog/variants/0435.jpg", "label": "Jamón y queso"}]
+  },
+  {
+    "id": "catalog-nikitos-tutucas",
+    "code": "0672",
+    "codes": ["0672"],
+    "name": "Nikitos Tutucas",
+    "category": "Cereales y galletitas",
+    "price": 690,
+    "unit": "Bolsa 80 g · bulto x 30",
+    "image": "assets/catalog/variants/0672.png",
+    "variants": [],
+    "catalog": true,
+    "skuCount": 1,
+    "coverImages": [{"src": "assets/catalog/variants/0672.png", "label": "Tutucas dulces"}]
+  },
+  {
+    "id": "catalog-palito-de-la-selva-caramelo",
+    "code": "0445",
+    "codes": ["0445"],
+    "name": "Palito de la Selva Caramelo",
+    "category": "Golosinas y chocolates",
+    "price": 9800,
+    "unit": "Bolsa 600 g",
+    "image": "assets/catalog/variants/0445.webp",
+    "variants": [],
+    "catalog": true,
+    "skuCount": 1,
+    "coverImages": [{"src": "assets/catalog/variants/0445.webp", "label": "Caramelos masticables"}]
+  },
+  {
+    "id": "catalog-mama-cocina-pan-rallado",
+    "code": "0446",
+    "codes": ["0446"],
+    "name": "Pan Rallado Mamá Cocina",
+    "category": "Almacén",
+    "price": 1290,
+    "unit": "Paquete 500 g",
+    "image": "assets/catalog/variants/0446.jpg",
+    "variants": [],
+    "catalog": true,
+    "skuCount": 1,
+    "coverImages": [{"src": "assets/catalog/variants/0446.jpg", "label": "Pan rallado"}]
+  },
+  {
+    "id": "catalog-pic-nic-dulce-de-leche",
+    "code": "0464",
+    "codes": ["0464"],
+    "name": "Pic Nic Dulce de Leche",
+    "category": "Golosinas y chocolates",
+    "price": 11200,
+    "unit": "Caja x 40 unidades",
+    "image": "assets/catalog/variants/0464.webp",
+    "variants": [],
+    "catalog": true,
+    "skuCount": 1,
+    "coverImages": [{"src": "assets/catalog/variants/0464.webp", "label": "Dulce de leche"}]
+  },
+  {
+    "id": "catalog-pico-dulce-mini-paletas",
+    "code": "220",
+    "codes": ["220"],
+    "name": "Pico Dulce Mini Paletas",
+    "category": "Golosinas y chocolates",
+    "price": 2000,
+    "unit": "Display x 50 unidades",
+    "image": "assets/catalog/variants/0220.jpg",
+    "variants": [],
+    "catalog": true,
+    "skuCount": 1,
+    "coverImages": [{"src": "assets/catalog/variants/0220.jpg", "label": "Mini paletas"}]
+  },
+  {
+    "id": "catalog-tic-tac-pastillas",
+    "code": "",
+    "codes": ["0545", "0542", "0544"],
+    "name": "Tic Tac Pastillas",
+    "category": "Golosinas y chocolates",
+    "price": 0,
+    "unit": "3 sabores disponibles",
+    "image": "assets/catalog/variants/0545.webp",
+    "variants": [
+      {"name": "Menta", "code": "0545", "price": 12600, "presentation": "Display x 12", "image": "assets/catalog/variants/0545.webp"},
+      {"name": "Frutilla", "code": "0542", "price": 12600, "presentation": "Display x 12", "image": "assets/catalog/variants/0542.jpeg"},
+      {"name": "Mix", "code": "0544", "price": 12600, "presentation": "Display x 12", "image": "assets/catalog/variants/0544.jpg"}
+    ],
+    "catalog": true,
+    "skuCount": 3,
+    "coverImages": [
+      {"src": "assets/catalog/variants/0545.webp", "label": "Menta"},
+      {"src": "assets/catalog/variants/0542.jpeg", "label": "Frutilla"},
+      {"src": "assets/catalog/variants/0544.jpg", "label": "Mix"}
+    ]
+  }
+];
