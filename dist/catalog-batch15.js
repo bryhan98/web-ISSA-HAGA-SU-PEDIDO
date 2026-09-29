@@ -1,31 +1,30 @@
 window.CATALOG_PRODUCTS_BATCH15 = [
   {
-    "id": "catalog-fideos-sol-pampeano-mostachol",
-    "code": "0161",
-    "codes": ["0161"],
-    "name": "Fideos Sol Pampeano Mostachol",
-    "category": "Galletitas y panificados",
-    "price": 890,
-    "unit": "Paquete x 500 g · bulto x 15",
-    "image": "assets/catalog/variants/0161.jpg",
-    "variants": [],
-    "catalog": true,
-    "skuCount": 1,
-    "coverImages": [{"src": "assets/catalog/variants/0161.jpg", "label": "Mostachol · 500 g"}]
-  },
-  {
-    "id": "catalog-paseo-salvado",
-    "code": "0458",
-    "codes": ["0458"],
-    "name": "Paseo Salvado",
+    "id": "catalog-paseo-galletitas",
+    "code": "",
+    "codes": ["0455", "0460", "0458"],
+    "name": "Galletitas Paseo",
     "category": "Cereales y galletitas",
-    "price": 1560,
-    "unit": "Paquete x 300 g · bulto x 14",
-    "image": "assets/catalog/variants/0458.jpg",
-    "variants": [],
+    "price": 0,
+    "unit": "3 variedades · paquetes de 300 g",
+    "image": "assets/catalog/variants/00455.jpg",
+    "variants": [
+      {"name": "5 Semillas", "code": "0455", "price": 1560, "presentation": "Paquete x 300 g", "image": "assets/catalog/variants/00455.jpg"},
+      {"name": "Sin Sal", "code": "0460", "price": 1260, "presentation": "Paquete x 300 g", "image": "assets/catalog/variants/00460.webp"},
+      {"name": "Salvado", "code": "0458", "price": 1560, "presentation": "Paquete x 300 g · bulto x 14", "image": "assets/catalog/variants/0458.jpg"}
+    ],
     "catalog": true,
-    "skuCount": 1,
-    "coverImages": [{"src": "assets/catalog/variants/0458.jpg", "label": "Salvado · 300 g"}]
+    "skuCount": 3,
+    "migratedFrom": [
+      {"id": "catalog-paseo-5-semillas", "variant": "5 Semillas"},
+      {"id": "catalog-paseo-sin-sal", "variant": "Sin Sal"},
+      {"id": "catalog-paseo-salvado", "variant": "Salvado"}
+    ],
+    "coverImages": [
+      {"src": "assets/catalog/variants/00455.jpg", "label": "5 Semillas"},
+      {"src": "assets/catalog/variants/00460.webp", "label": "Sin Sal"},
+      {"src": "assets/catalog/variants/0458.jpg", "label": "Salvado"}
+    ]
   },
   {
     "id": "catalog-topps-ring-pop",

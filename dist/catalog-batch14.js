@@ -140,34 +140,6 @@ window.CATALOG_PRODUCTS_BATCH14 = [
     "coverImages": [{"src": "assets/catalog/variants/00274.webp", "label": "Original · 118 g"}]
   },
   {
-    "id": "catalog-paseo-5-semillas",
-    "code": "0455",
-    "codes": ["0455"],
-    "name": "Paseo 5 Semillas",
-    "category": "Cereales y galletitas",
-    "price": 1560,
-    "unit": "Paquete x 300 g",
-    "image": "assets/catalog/variants/00455.jpg",
-    "variants": [],
-    "catalog": true,
-    "skuCount": 1,
-    "coverImages": [{"src": "assets/catalog/variants/00455.jpg", "label": "5 Semillas · 300 g"}]
-  },
-  {
-    "id": "catalog-paseo-sin-sal",
-    "code": "0460",
-    "codes": ["0460"],
-    "name": "Paseo Sin Sal",
-    "category": "Cereales y galletitas",
-    "price": 1260,
-    "unit": "Paquete x 300 g",
-    "image": "assets/catalog/variants/00460.webp",
-    "variants": [],
-    "catalog": true,
-    "skuCount": 1,
-    "coverImages": [{"src": "assets/catalog/variants/00460.webp", "label": "Sin Sal · 300 g"}]
-  },
-  {
     "id": "catalog-turron-arcor-25",
     "code": "0564",
     "codes": ["0564"],

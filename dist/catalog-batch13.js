@@ -1,45 +1,30 @@
 window.CATALOG_PRODUCTS_BATCH13 = [
   {
-    "id": "catalog-nikitos-bolitas-dulces",
-    "code": "0499",
-    "codes": ["0499"],
-    "name": "Nikitos Bolitas Dulces",
+    "id": "catalog-nikitos",
+    "code": "",
+    "codes": ["0499", "0435", "0672"],
+    "name": "Nikitos",
     "category": "Cereales y galletitas",
-    "price": 690,
-    "unit": "Bolsa 80 g · bulto x 30",
+    "price": 0,
+    "unit": "3 variedades · bolsas de 80 g · bulto x 30",
     "image": "assets/catalog/variants/0499.jpg",
-    "variants": [],
+    "variants": [
+      {"name": "Bolitas dulces", "code": "0499", "price": 690, "presentation": "Bolsa 80 g · bulto x 30", "image": "assets/catalog/variants/0499.jpg"},
+      {"name": "Pizzitos jamón y queso", "code": "0435", "price": 690, "presentation": "Bolsa 80 g · bulto x 30", "image": "assets/catalog/variants/0435.jpg"},
+      {"name": "Tutucas dulces", "code": "0672", "price": 690, "presentation": "Bolsa 80 g · bulto x 30", "image": "assets/catalog/variants/0672.png"}
+    ],
     "catalog": true,
-    "skuCount": 1,
-    "coverImages": [{"src": "assets/catalog/variants/0499.jpg", "label": "Bolitas dulces"}]
-  },
-  {
-    "id": "catalog-nikitos-pizzitos",
-    "code": "0435",
-    "codes": ["0435"],
-    "name": "Nikitos Pizzitos JyQ",
-    "category": "Cereales y galletitas",
-    "price": 690,
-    "unit": "Bolsa 80 g · bulto x 30",
-    "image": "assets/catalog/variants/0435.jpg",
-    "variants": [],
-    "catalog": true,
-    "skuCount": 1,
-    "coverImages": [{"src": "assets/catalog/variants/0435.jpg", "label": "Jamón y queso"}]
-  },
-  {
-    "id": "catalog-nikitos-tutucas",
-    "code": "0672",
-    "codes": ["0672"],
-    "name": "Nikitos Tutucas",
-    "category": "Cereales y galletitas",
-    "price": 690,
-    "unit": "Bolsa 80 g · bulto x 30",
-    "image": "assets/catalog/variants/0672.png",
-    "variants": [],
-    "catalog": true,
-    "skuCount": 1,
-    "coverImages": [{"src": "assets/catalog/variants/0672.png", "label": "Tutucas dulces"}]
+    "skuCount": 3,
+    "migratedFrom": [
+      {"id": "catalog-nikitos-bolitas-dulces", "variant": "Bolitas dulces"},
+      {"id": "catalog-nikitos-pizzitos", "variant": "Pizzitos jamón y queso"},
+      {"id": "catalog-nikitos-tutucas", "variant": "Tutucas dulces"}
+    ],
+    "coverImages": [
+      {"src": "assets/catalog/variants/0499.jpg", "label": "Bolitas dulces"},
+      {"src": "assets/catalog/variants/0435.jpg", "label": "Pizzitos jamón y queso"},
+      {"src": "assets/catalog/variants/0672.png", "label": "Tutucas dulces"}
+    ]
   },
   {
     "id": "catalog-palito-de-la-selva-caramelo",
