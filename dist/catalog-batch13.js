@@ -100,23 +100,25 @@ window.CATALOG_PRODUCTS_BATCH13 = [
   {
     "id": "catalog-tic-tac-pastillas",
     "code": "",
-    "codes": ["0545", "0542", "0544"],
+    "codes": ["0545", "0542", "0544", "0546"],
     "name": "Tic Tac Pastillas",
     "category": "Golosinas y chocolates",
     "price": 0,
-    "unit": "3 sabores disponibles",
+    "unit": "4 sabores disponibles",
     "image": "assets/catalog/variants/0545.webp",
     "variants": [
       {"name": "Menta", "code": "0545", "price": 12600, "presentation": "Display x 12", "image": "assets/catalog/variants/0545.webp"},
       {"name": "Frutilla", "code": "0542", "price": 12600, "presentation": "Display x 12", "image": "assets/catalog/variants/0542.jpeg"},
-      {"name": "Mix", "code": "0544", "price": 12600, "presentation": "Display x 12", "image": "assets/catalog/variants/0544.jpg"}
+      {"name": "Mix", "code": "0544", "price": 12600, "presentation": "Display x 12", "image": "assets/catalog/variants/0544.jpg"},
+      {"name": "Naranja", "code": "0546", "price": 12600, "presentation": "Display x 12", "image": "assets/catalog/variants/00546.webp"}
     ],
     "catalog": true,
-    "skuCount": 3,
+    "skuCount": 4,
     "coverImages": [
       {"src": "assets/catalog/variants/0545.webp", "label": "Menta"},
       {"src": "assets/catalog/variants/0542.jpeg", "label": "Frutilla"},
-      {"src": "assets/catalog/variants/0544.jpg", "label": "Mix"}
+      {"src": "assets/catalog/variants/0544.jpg", "label": "Mix"},
+      {"src": "assets/catalog/variants/00546.webp", "label": "Naranja"}
     ]
   }
 ];

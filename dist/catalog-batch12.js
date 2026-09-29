@@ -305,12 +305,16 @@ window.CATALOG_PRODUCTS_BATCH12 = [
       "334",
       "335",
       "364",
-      "0722"
+      "0722",
+      "0604",
+      "0603",
+      "0601",
+      "0721"
     ],
     "name": "Sedal acondicionador",
     "category": "Cuidado personal",
     "price": 0,
-    "unit": "4 presentaciones",
+    "unit": "8 presentaciones",
     "image": "assets/catalog/variants/334.webp",
     "variants": [
       {
@@ -340,10 +344,38 @@ window.CATALOG_PRODUCTS_BATCH12 = [
         "price": 5800,
         "presentation": "Sachets x 24",
         "image": "assets/catalog/variants/0722.webp"
+      },
+      {
+        "name": "Balance · Botella 190 ml",
+        "code": "0604",
+        "price": 3100,
+        "presentation": "Botella 190 ml",
+        "image": "assets/catalog/variants/00604.jpg"
+      },
+      {
+        "name": "Ceramidas · Botella 190 ml",
+        "code": "0603",
+        "price": 3100,
+        "presentation": "Botella 190 ml",
+        "image": "assets/catalog/variants/00603.jpg"
+      },
+      {
+        "name": "Acondicionador surtido · Botella 190 ml",
+        "code": "0601",
+        "price": 3100,
+        "presentation": "Botella 190 ml",
+        "image": "assets/catalog/variants/00601.jpg"
+      },
+      {
+        "name": "Ceramidas · Sachets x 24",
+        "code": "0721",
+        "price": 5800,
+        "presentation": "Sachets x 24",
+        "image": "assets/catalog/variants/00721.png"
       }
     ],
     "catalog": true,
-    "skuCount": 4,
+    "skuCount": 8,
     "coverImages": [
       {
         "src": "assets/catalog/variants/334.webp",
@@ -360,6 +392,22 @@ window.CATALOG_PRODUCTS_BATCH12 = [
       {
         "src": "assets/catalog/variants/0722.webp",
         "label": "Balance · Sachets x 24"
+      },
+      {
+        "src": "assets/catalog/variants/00604.jpg",
+        "label": "Balance · Botella 190 ml"
+      },
+      {
+        "src": "assets/catalog/variants/00603.jpg",
+        "label": "Ceramidas · Botella 190 ml"
+      },
+      {
+        "src": "assets/catalog/variants/00601.jpg",
+        "label": "Acondicionador surtido · Botella 190 ml"
+      },
+      {
+        "src": "assets/catalog/variants/00721.png",
+        "label": "Ceramidas · Sachets x 24"
       }
     ]
   }
