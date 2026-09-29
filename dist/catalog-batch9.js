@@ -160,14 +160,14 @@ window.CATALOG_PRODUCTS_BATCH9 = [
     image: "https://http2.mlstatic.com/D_NQ_NP_955880-MLU79080280228_092024-O.webp",
     variants: [
       { name: "Cherry", code: "0408", price: 4200, presentation: "Display x12 cajitas", image: "https://http2.mlstatic.com/D_NQ_NP_955880-MLU79080280228_092024-O.webp" },
-      { name: "Menta", code: "0412", price: 4200, presentation: "Display x12 cajitas", image: "https://www.tangodepot.com/image/cache/catalog/24.6/mentitas-la-casa-caja-presentacion-x12-por-mayor-D_NQ_NP_661750-MLA25795586607_072017-F__62852-800x800.jpg" },
+      { name: "Menta", code: "0412", price: 4200, presentation: "Display x12 cajitas", image: "https://chitarroni.com.ar/images/product_image/2581/0?fit=fill&h=1080&w=1080" },
       { name: "Sandía", code: "0002", price: 4200, presentation: "Display x12 cajitas", image: "https://f.fcdn.app/imgs/cdfbd3/ardomayorista.com/ardmuy/fd2a/original/catalogo/A05080_A0508004_1/460x460/pastilla-mentitas-lacasa-x-12-sandia.jpg" }
     ],
     catalog: true,
     skuCount: 3,
     coverImages: [
       { src: "https://http2.mlstatic.com/D_NQ_NP_955880-MLU79080280228_092024-O.webp", label: "Cherry" },
-      { src: "https://www.tangodepot.com/image/cache/catalog/24.6/mentitas-la-casa-caja-presentacion-x12-por-mayor-D_NQ_NP_661750-MLA25795586607_072017-F__62852-800x800.jpg", label: "Menta" },
+      { src: "https://chitarroni.com.ar/images/product_image/2581/0?fit=fill&h=1080&w=1080", label: "Menta" },
       { src: "https://f.fcdn.app/imgs/cdfbd3/ardomayorista.com/ardmuy/fd2a/original/catalogo/A05080_A0508004_1/460x460/pastilla-mentitas-lacasa-x-12-sandia.jpg", label: "Sandía" }
     ]
   },
