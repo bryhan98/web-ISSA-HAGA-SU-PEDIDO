@@ -52,13 +52,13 @@ window.CATALOG_PRODUCTS_BATCH9 = [
     image: "https://theargentino.com/cdn/shop/files/Jorgelin_glaceado_x_1_u_01.png?v=1778850277&width=1946",
     variants: [
       { name: "Blanco", code: "0353", price: 1230, presentation: "Alfajor triple · 85 g", image: "https://theargentino.com/cdn/shop/files/Jorgelin_glaceado_x_1_u_01.png?v=1778850277&width=1946" },
-      { name: "Negro", code: "0354", price: 1230, presentation: "Alfajor triple · 85 g", image: "https://d3340tyzmtlo4u.cloudfront.net/users/864/images/detailed/8/Jorgel%C3%ADn_Alfajor_Negro_Triple%2C_85_g.webp" }
+      { name: "Negro", code: "0354", price: 1230, presentation: "Alfajor triple · 85 g", image: "assets/catalog/foto-0354.webp" }
     ],
     catalog: true,
     skuCount: 2,
     coverImages: [
       { src: "https://theargentino.com/cdn/shop/files/Jorgelin_glaceado_x_1_u_01.png?v=1778850277&width=1946", label: "Blanco" },
-      { src: "https://d3340tyzmtlo4u.cloudfront.net/users/864/images/detailed/8/Jorgel%C3%ADn_Alfajor_Negro_Triple%2C_85_g.webp", label: "Negro" }
+      { src: "assets/catalog/foto-0354.webp", label: "Negro" }
     ]
   },
   {

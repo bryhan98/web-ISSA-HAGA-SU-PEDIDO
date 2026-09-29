@@ -375,13 +375,13 @@ window.CATALOG_PRODUCTS_BATCH11 = [
     "category": "Cuidado personal",
     "price": 2490,
     "unit": "Envase 60 g · bulto x 12",
-    "image": "https://assets.unileversolutions.com/v1/34184196.png",
+    "image": "assets/catalog/foto-0716.webp",
     "variants": [],
     "catalog": true,
     "skuCount": 1,
     "coverImages": [
       {
-        "src": "https://assets.unileversolutions.com/v1/34184196.png",
+        "src": "assets/catalog/foto-0716.webp",
         "label": "Crema · 60 g"
       }
     ]
