@@ -185,14 +185,25 @@ function createOrderMeta(){
 }
 function renderChips(){const cats=['Todos',...new Set(PRODUCTS.map(p=>p.category))];$('#categoryChips').innerHTML=cats.map(c=>`<button class="chip ${c===activeCategory?'active':''}" data-category="${c}" type="button">${c}</button>`).join('')}
 function renderCatalogChips(){const cats=['Todos',...new Set(CATALOG_PRODUCTS.map(p=>p.category))];$('#catalogCategoryChips').innerHTML=cats.map(c=>`<button class="chip ${c===activeCatalogCategory?'active':''}" data-catalog-category="${c}" type="button">${c}</button>`).join('')}
+function coverGalleryItems(p){
+  if(p.coverImages?.length)return p.coverImages;
+  if(p.variants?.length>1){
+    const items=p.variants.map(v=>({src:v.image||p.image,label:v.name,imageCrop:v.imageCrop||v.crop}));
+    const key=item=>`${item.src}|${item.imageCrop?`${item.imageCrop.cols||1}x${item.imageCrop.rows||1}:${item.imageCrop.index||0}`:''}`;
+    if(items.every(item=>item.src&&(item.imageCrop||p.variants.find(v=>v.name===item.label)?.image))&&new Set(items.map(key)).size===items.length)return items;
+  }
+  return null;
+}
 function coverGalleryMarkup(p){
-  if(!p.coverImages?.length)return `<img class="product-image" src="${p.image}" alt="${p.name}" loading="lazy" data-zoom="${p.image}" role="button" tabindex="0" aria-label="Ampliar foto de ${p.name}"><span class="code-badge">${p.catalog&&p.skuCount>1?`${p.skuCount} VARIEDADES`:`CÓD. ${p.code||p.id}`}</span><button class="zoom-button" data-zoom="${p.image}" aria-label="Ampliar imagen" type="button">↗</button>`;
-  const columns=Math.min(4,Math.ceil(Math.sqrt(p.coverImages.length)));
-  return `<div class="cover-image-gallery" style="--cover-columns:${columns}" aria-label="Variedades de ${p.name}">${p.coverImages.map(item=>`<button class="cover-image-choice" data-zoom="${item.src}" aria-label="Ampliar ${item.label}" type="button"><img src="${item.src}" alt="${item.label}" loading="lazy"><span>${item.label}</span></button>`).join('')}</div>`;
+  const items=coverGalleryItems(p);
+  if(!items)return `<img class="product-image" src="${p.image}" alt="${p.name}" loading="lazy" data-zoom="${p.image}" role="button" tabindex="0" aria-label="Ampliar foto de ${p.name}"><span class="code-badge">${p.catalog&&p.skuCount>1?`${p.skuCount} VARIEDADES`:`CÓD. ${p.code||p.id}`}</span><button class="zoom-button" data-zoom="${p.image}" aria-label="Ampliar imagen" type="button">↗</button>`;
+  const columns=Math.min(4,Math.ceil(Math.sqrt(items.length)));
+  return `<div class="cover-image-gallery" style="--cover-columns:${columns}" aria-label="Variedades de ${p.name}">${items.map(item=>{const crop=item.imageCrop||item.crop;const cropAttrs=crop?`data-zoom-cols="${crop.cols||1}" data-zoom-rows="${crop.rows||1}" data-zoom-index="${crop.index||0}"`:'';const visual=crop?`<span class="cover-image-crop" style="background-image:url('${item.src}');background-size:${(crop.cols||1)*100}% ${(crop.rows||1)*100}%;background-position:${(crop.cols||1)===1?0:(crop.index||0)%(crop.cols||1)/((crop.cols||1)-1)*100}% ${Math.floor((crop.index||0)/(crop.cols||1))===0?0:Math.floor((crop.index||0)/(crop.cols||1))/((crop.rows||1)-1)*100}%"></span>`:`<img src="${item.src}" alt="${item.label}" loading="lazy">`;return `<button class="cover-image-choice" data-zoom="${item.src}" ${cropAttrs} aria-label="Ampliar ${item.label}" type="button">${visual}<span>${item.label}</span></button>`}).join('')}</div>`;
 }
 function variantImageMarkup(p,v){
   const image=v.image||(p.catalog&&v.code?`assets/catalog/variants/${v.code}.webp`:p.image);
-  if(v.imageCrop){const {cols=1,rows=1,index=0}=v.imageCrop,col=index%cols,row=Math.floor(index/cols),x=cols===1?0:col/(cols-1)*100,y=rows===1?0:row/(rows-1)*100;return `<button class="variant-row-thumb variant-row-crop" type="button" data-zoom="${image}" data-zoom-cols="${cols}" data-zoom-rows="${rows}" data-zoom-index="${index}" aria-label="Ampliar foto de ${p.name} ${v.name}" style="background-image:url('${image}');background-size:${cols*100}% ${rows*100}%;background-position:${x}% ${y}%"></button>`}
+  const crop=v.imageCrop||v.crop;
+  if(crop){const {cols=1,rows=1,index=0}=crop,col=index%cols,row=Math.floor(index/cols),x=cols===1?0:col/(cols-1)*100,y=rows===1?0:row/(rows-1)*100;return `<button class="variant-row-thumb variant-row-crop" type="button" data-zoom="${image}" data-zoom-cols="${cols}" data-zoom-rows="${rows}" data-zoom-index="${index}" aria-label="Ampliar foto de ${p.name} ${v.name}" style="background-image:url('${image}');background-size:${cols*100}% ${rows*100}%;background-position:${x}% ${y}%"></button>`}
   if(v.imageUnavailable)return `<span class="variant-row-thumb variant-row-no-image" role="img" aria-label="Foto no disponible para ${p.name} ${v.name}">Foto no disponible</span>`;
   return `<img class="variant-row-thumb" src="${image}" alt="${p.name} ${v.name}" loading="lazy" data-zoom="${image}" role="button" tabindex="0" aria-label="Ampliar foto de ${p.name} ${v.name}">`;
 }
