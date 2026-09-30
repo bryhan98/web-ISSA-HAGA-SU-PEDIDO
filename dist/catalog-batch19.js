@@ -91,11 +91,11 @@ window.CATALOG_PRODUCTS_BATCH19 = [
     "category": "Limpieza y hogar",
     "price": 420,
     "unit": "Unidad",
-    "image": "https://quimicamegamax.com.ar/wp-content/uploads/2024/05/imagen_2024-05-10_144048030.png",
+    "image": "https://acdn-us.mitiendanube.com/stores/894/152/products/medianaranja_amarillopisos-36b431af8fd9111f5e17010552973278-1024-1024.webp",
     "variants": [],
     "catalog": true,
     "skuCount": 1,
-    "coverImages": [{"src": "https://quimicamegamax.com.ar/wp-content/uploads/2024/05/imagen_2024-05-10_144048030.png", "label": "Paño de piso amarillo"}]
+    "coverImages": [{"src": "https://acdn-us.mitiendanube.com/stores/894/152/products/medianaranja_amarillopisos-36b431af8fd9111f5e17010552973278-1024-1024.webp", "label": "Paño absorbente amarillo"}]
   },
   {
     "id": "catalog-lina-pocket-con-alas",
