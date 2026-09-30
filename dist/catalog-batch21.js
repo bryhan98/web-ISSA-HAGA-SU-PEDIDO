@@ -204,7 +204,7 @@
     category: "Cuidado personal",
     price: 2290,
     unit: "Caja x 3 unidades",
-    image: "https://dcdn-us.mitiendanube.com/stores/007/722/728/products/6002ec20-7cbf-4ecb-bf68-34eef7906ec8-e8f758b2def8fc67ec17806057943479-1024-1024.webp",
+    image: "assets/catalog/preservativos-tulipan-clasico.png",
     variants: [],
     catalog: true,
     skuCount: 1
