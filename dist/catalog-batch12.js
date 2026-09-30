@@ -247,32 +247,32 @@ window.CATALOG_PRODUCTS_BATCH12 = [
     "category": "Golosinas y chocolates",
     "price": 0,
     "unit": "2 presentaciones",
-    "image": "assets/catalog/variants/96369.webp",
+    "image": "assets/catalog/variants/arcor-rellenos-frutales.png",
     "variants": [
       {
         "name": "Frutales",
         "code": "96369",
         "price": 10500,
         "presentation": "Bolsa 810 g",
-        "image": "assets/catalog/variants/96369.webp"
+        "image": "assets/catalog/variants/arcor-rellenos-frutales.png"
       },
       {
         "name": "Menta con chocolate",
         "code": "0507",
         "price": 10500,
         "presentation": "Bolsa 810 g",
-        "image": "assets/catalog/variants/0507.webp"
+        "image": "assets/catalog/variants/arcor-menta-chocolate.png"
       }
     ],
     "catalog": true,
     "skuCount": 2,
     "coverImages": [
       {
-        "src": "assets/catalog/variants/96369.webp",
+        "src": "assets/catalog/variants/arcor-rellenos-frutales.png",
         "label": "Frutales"
       },
       {
-        "src": "assets/catalog/variants/0507.webp",
+        "src": "assets/catalog/variants/arcor-menta-chocolate.png",
         "label": "Menta con chocolate"
       }
     ]
