@@ -145,6 +145,14 @@ window.CATALOG_PRODUCTS_BATCH19 = [
     ],
     "catalog": true,
     "skuCount": 7,
-    "coverImages": [{"src": "https://assets.unileversolutions.com/v1/102863500.jpg", "label": "Variedades Sedal Shampoo"}]
+    "coverImages": [
+      {"src": "assets/catalog/variants/96385.jpg", "label": "Crema Balance · 190 ml"},
+      {"src": "assets/catalog/variants/00201.jpg", "label": "Ceramidas · 190 ml"},
+      {"src": "https://assets.unileversolutions.com/v1/102863500.jpg", "label": "Surtido · 190 ml"},
+      {"src": "assets/catalog/variants/00329.webp", "label": "Repuesto surtido · 300 ml"},
+      {"src": "assets/catalog/variants/00333.png", "label": "Repuesto Ceramidas · 300 ml"},
+      {"src": "assets/catalog/variants/00725.png", "label": "Balance · sachet x24"},
+      {"src": "assets/catalog/variants/00724.png", "label": "Ceramidas · sachet x24"}
+    ]
   }
 ];
