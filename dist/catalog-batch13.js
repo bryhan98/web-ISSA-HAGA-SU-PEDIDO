@@ -34,11 +34,11 @@ window.CATALOG_PRODUCTS_BATCH13 = [
     "category": "Golosinas y chocolates",
     "price": 9800,
     "unit": "Bolsa 600 g",
-    "image": "assets/catalog/variants/0445.webp",
+    "image": "assets/catalog/variants/palito-de-la-selva-caramelo.png",
     "variants": [],
     "catalog": true,
     "skuCount": 1,
-    "coverImages": [{"src": "assets/catalog/variants/0445.webp", "label": "Caramelos masticables"}]
+    "coverImages": [{"src": "assets/catalog/variants/palito-de-la-selva-caramelo.png", "label": "Caramelos masticables"}]
   },
   {
     "id": "catalog-mama-cocina-pan-rallado",
