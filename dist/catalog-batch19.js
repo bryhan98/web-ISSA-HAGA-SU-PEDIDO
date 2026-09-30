@@ -132,7 +132,7 @@ window.CATALOG_PRODUCTS_BATCH19 = [
     "name": "Sedal Shampoo",
     "category": "Cuidado personal",
     "price": 0,
-    "unit": "7 opciones disponibles",
+    "unit": "9 opciones disponibles",
     "image": "assets/catalog/variants/96385.jpg",
     "variants": [
       {"name": "Crema Balance · 190 ml", "code": "96385", "price": 3100, "presentation": "Botella 190 ml", "image": "assets/catalog/variants/96385.jpg"},
@@ -146,7 +146,7 @@ window.CATALOG_PRODUCTS_BATCH19 = [
       {"name": "Ceramidas · sachet", "code": "0724", "price": 5800, "presentation": "Caja x 24 sachets", "image": "assets/catalog/variants/00724.png"}
     ],
     "catalog": true,
-    "skuCount": 7,
+    "skuCount": 9,
     "coverImages": [
       {"src": "assets/catalog/variants/96385.jpg", "label": "Crema Balance · 190 ml"},
       {"src": "assets/catalog/variants/00201.jpg", "label": "Ceramidas · 190 ml"},
