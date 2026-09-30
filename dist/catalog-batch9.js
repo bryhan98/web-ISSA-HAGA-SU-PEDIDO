@@ -49,15 +49,15 @@ window.CATALOG_PRODUCTS_BATCH9 = [
     category: "Alfajores",
     price: 0,
     unit: "2 variedades disponibles",
-    image: "https://theargentino.com/cdn/shop/files/Jorgelin_glaceado_x_1_u_01.png?v=1778850277&width=1946",
+    image: "https://toledodigitalar.vtexassets.com/arquivos/ids/182726/13938.jpg?v=638824194464100000",
     variants: [
-      { name: "Blanco", code: "0353", price: 1230, presentation: "Alfajor triple · 85 g", image: "https://theargentino.com/cdn/shop/files/Jorgelin_glaceado_x_1_u_01.png?v=1778850277&width=1946" },
+      { name: "Blanco", code: "0353", price: 1230, presentation: "Alfajor triple · 85 g", image: "https://toledodigitalar.vtexassets.com/arquivos/ids/182726/13938.jpg?v=638824194464100000" },
       { name: "Negro", code: "0354", price: 1230, presentation: "Alfajor triple · 85 g", image: "assets/catalog/foto-0354.webp" }
     ],
     catalog: true,
     skuCount: 2,
     coverImages: [
-      { src: "https://theargentino.com/cdn/shop/files/Jorgelin_glaceado_x_1_u_01.png?v=1778850277&width=1946", label: "Blanco" },
+      { src: "https://toledodigitalar.vtexassets.com/arquivos/ids/182726/13938.jpg?v=638824194464100000", label: "Blanco" },
       { src: "assets/catalog/foto-0354.webp", label: "Negro" }
     ]
   },
