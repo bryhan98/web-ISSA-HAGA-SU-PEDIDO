@@ -25,5 +25,9 @@
   setVariantImage(misky, "253", "https://dev.administranet.com.ar/catalogo/angelita/Articulo_Foto/foto1_103_0.jpeg");
   setVariantImage(misky, "469", "https://angelitagolosinas.com.ar/Articulo_Foto_Multi/91_0.jpeg");
 
+  const fullMani = family(25, "catalog-pdf-0200");
+  fullMani.image = "assets/catalog/variants/georgalos-full-mani-90.png";
+  fullMani.coverImages = [{ src: fullMani.image, label: "Georgalos Full Maní 90 g" }];
+
   window.CATALOG_PRODUCTS_BATCH35 = [];
 })();
