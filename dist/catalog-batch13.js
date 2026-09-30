@@ -7,11 +7,11 @@ window.CATALOG_PRODUCTS_BATCH13 = [
     "category": "Cereales y galletitas",
     "price": 0,
     "unit": "3 variedades · bolsas de 80 g · bulto x 30",
-    "image": "assets/catalog/variants/0499.jpg",
+    "image": "https://masonlineprod.vtexassets.com/arquivos/ids/248426/Bolitas-Dulces-80-Gr-1-22700.jpg?v=637892733874970000",
     "variants": [
-      {"name": "Bolitas dulces", "code": "0499", "price": 690, "presentation": "Bolsa 80 g · bulto x 30", "image": "assets/catalog/variants/0499.jpg"},
-      {"name": "Pizzitos jamón y queso", "code": "0435", "price": 690, "presentation": "Bolsa 80 g · bulto x 30", "image": "assets/catalog/variants/0435.jpg"},
-      {"name": "Tutucas dulces", "code": "0672", "price": 690, "presentation": "Bolsa 80 g · bulto x 30", "image": "assets/catalog/variants/0672.png"}
+      {"name": "Bolitas dulces", "code": "0499", "price": 690, "presentation": "Bolsa 80 g · bulto x 30", "image": "https://masonlineprod.vtexassets.com/arquivos/ids/248426/Bolitas-Dulces-80-Gr-1-22700.jpg?v=637892733874970000"},
+      {"name": "Pizzitos jamón y queso", "code": "0435", "price": 690, "presentation": "Bolsa 80 g · bulto x 30", "image": "https://jumboargentina.vtexassets.com/arquivos/ids/533881/Pizzitos-De-Jamon-Y-Queso-Nikitos-X-80grs-1-668268.jpg?v=636930984341630000"},
+      {"name": "Tutucas dulces", "code": "0672", "price": 690, "presentation": "Bolsa 80 g · bulto x 30", "image": "https://acdn-us.mitiendanube.com/stores/323/592/products/nikitos-cereal1-7d8261d837a447961516678403994589-1024-1024.webp"}
     ],
     "catalog": true,
     "skuCount": 3,
@@ -21,9 +21,9 @@ window.CATALOG_PRODUCTS_BATCH13 = [
       {"id": "catalog-nikitos-tutucas", "variant": "Tutucas dulces"}
     ],
     "coverImages": [
-      {"src": "assets/catalog/variants/0499.jpg", "label": "Bolitas dulces"},
-      {"src": "assets/catalog/variants/0435.jpg", "label": "Pizzitos jamón y queso"},
-      {"src": "assets/catalog/variants/0672.png", "label": "Tutucas dulces"}
+      {"src": "https://masonlineprod.vtexassets.com/arquivos/ids/248426/Bolitas-Dulces-80-Gr-1-22700.jpg?v=637892733874970000", "label": "Bolitas dulces"},
+      {"src": "https://jumboargentina.vtexassets.com/arquivos/ids/533881/Pizzitos-De-Jamon-Y-Queso-Nikitos-X-80grs-1-668268.jpg?v=636930984341630000", "label": "Pizzitos jamón y queso"},
+      {"src": "https://acdn-us.mitiendanube.com/stores/323/592/products/nikitos-cereal1-7d8261d837a447961516678403994589-1024-1024.webp", "label": "Tutucas dulces"}
     ]
   },
   {
