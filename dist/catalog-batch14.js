@@ -155,17 +155,56 @@ window.CATALOG_PRODUCTS_BATCH14 = [
   },
   {
     "id": "catalog-topline-7-atomic-strong",
-    "code": "0104",
-    "codes": ["0104"],
-    "name": "Top Line 7 Atomic Strong",
+    "code": "",
+    "codes": [
+      "0104",
+      "0285",
+      "0369"
+    ],
+    "name": "Top Line 7 Chicles",
     "category": "Golosinas y chocolates",
-    "price": 13296,
-    "unit": "Display x 16 unidades",
+    "price": 0,
+    "unit": "3 sabores disponibles · display x16",
     "image": "assets/catalog/variants/00104.webp",
-    "variants": [],
+    "variants": [
+      {
+        "name": "Atomic Strong · x16",
+        "code": "0104",
+        "price": 13296,
+        "presentation": "Display x16 unidades",
+        "image": "assets/catalog/variants/00104.webp"
+      },
+      {
+        "name": "Strawberry · x16",
+        "code": "0285",
+        "price": 13296,
+        "presentation": "Display x16 unidades",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_661256-MLA103541039595_012026-O.webp"
+      },
+      {
+        "name": "Xplosive Mint · x16",
+        "code": "0369",
+        "price": 13296,
+        "presentation": "Display x16 unidades",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_977066-MLA53990608093_022023-O.webp"
+      }
+    ],
     "catalog": true,
-    "skuCount": 1,
-    "coverImages": [{"src": "assets/catalog/variants/00104.webp", "label": "Atomic Strong · x16"}]
+    "skuCount": 3,
+    "coverImages": [
+      {
+        "src": "assets/catalog/variants/00104.webp",
+        "label": "Atomic Strong"
+      },
+      {
+        "src": "https://http2.mlstatic.com/D_NQ_NP_661256-MLA103541039595_012026-O.webp",
+        "label": "Strawberry"
+      },
+      {
+        "src": "https://http2.mlstatic.com/D_NQ_NP_977066-MLA53990608093_022023-O.webp",
+        "label": "Xplosive Mint"
+      }
+    ]
   },
   {
     "id": "catalog-yipi-pastillas-surtidas",
