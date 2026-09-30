@@ -7,17 +7,20 @@
   };
 
   const marshmallows = product(6, "catalog-gongys-malvaviscos-frutilla");
-  const marshmallowImage = "assets/catalog/variants/gongys-malvaviscos-linea.png";
-  const flavorCrops = { "511": 0, "0559": 1, "0011": 2 };
-  marshmallows.image = marshmallowImage;
+  const variantImages = {
+    "511": "assets/catalog/variants/gongys-clasico-28g.png",
+    "0011": "assets/catalog/variants/gongys-frutilla-28g.png",
+    "0559": "assets/catalog/variants/gongys-nubecitas-28g.png"
+  };
+  marshmallows.image = variantImages["511"];
   for (const variant of marshmallows.variants || []) {
-    if (!(variant.code in flavorCrops)) continue;
-    variant.image = marshmallowImage;
-    variant.imageCrop = { cols: 3, rows: 1, index: flavorCrops[variant.code] };
+    if (!(variant.code in variantImages)) continue;
+    variant.image = variantImages[variant.code];
+    delete variant.imageCrop;
   }
   marshmallows.coverImages = (marshmallows.variants || [])
-    .filter((variant) => variant.code in flavorCrops)
-    .map((variant) => ({ src: variant.image, label: variant.name, imageCrop: variant.imageCrop }));
+    .filter((variant) => variant.code in variantImages)
+    .map((variant) => ({ src: variant.image, label: variant.name }));
 
   const heart = product(6, "catalog-gongys-corazon");
   heart.image = "assets/catalog/variants/gongys-corazon-linea.png";
