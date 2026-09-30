@@ -34,6 +34,45 @@
     image: "https://www.masivos.com/images/img_comp/15555.jpg"
   });
 
+  const miskyTurronVariant = misky.variants.find((item) => item.name === "Turrón de maní");
+  const miskyDientesVariant = misky.variants.find((item) => item.name === "Goma Dientes 500 g");
+  misky.variants = misky.variants.filter((item) =>
+    ["Gusanitos ácidos", "Gomitas Fantasía", "Gomitas Eucaliptus", "Gomitas Jelly Roll"].includes(item.name)
+  );
+  misky.codes = misky.variants.map((item) => item.code);
+  misky.skuCount = misky.variants.length;
+  misky.unit = `${misky.skuCount} opciones disponibles`;
+  misky.image = misky.variants[0].image;
+  misky.coverImages = misky.variants.map((item) => ({ src: item.image, label: item.name }));
+
+  const miskyTurron = {
+    id: "catalog-misky-turron-mani",
+    code: miskyTurronVariant.code,
+    codes: [miskyTurronVariant.code],
+    name: "Misky Turrón de maní",
+    category: "Golosinas y chocolates",
+    price: miskyTurronVariant.price,
+    unit: miskyTurronVariant.presentation,
+    image: miskyTurronVariant.image,
+    variants: [],
+    catalog: true,
+    skuCount: 1
+  };
+
+  const miskyDientes = {
+    id: "catalog-misky-gomitas-dientes",
+    code: miskyDientesVariant.code,
+    codes: [miskyDientesVariant.code],
+    name: "Misky Gomitas Dientes",
+    category: "Golosinas y chocolates",
+    price: miskyDientesVariant.price,
+    unit: miskyDientesVariant.presentation,
+    image: miskyDientesVariant.image,
+    variants: [],
+    catalog: true,
+    skuCount: 1
+  };
+
   const lince = {
     id: "catalog-lince-palillero",
     code: "0740",
@@ -174,6 +213,8 @@
   window.CATALOG_PRODUCTS_BATCH21 = [
     lince,
     milka,
+    miskyTurron,
+    miskyDientes,
     openCandyFamily,
     hisopos,
     tulipan

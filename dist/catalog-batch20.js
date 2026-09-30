@@ -40,7 +40,7 @@
 
   const misky = findProduct(16, "catalog-misky-gusanitos");
   addVariant(misky, { name: "Gomitas Fantasía", code: "0301", price: 9900, presentation: "Bolsa 1 kg", image: "https://acdn-us.mitiendanube.com/stores/005/651/909/products/1-76f0d1d0223d7af0bf17394804554553-1024-1024.webp" });
-  addVariant(misky, { name: "Gomitas Eucaliptus", code: "0302", price: 9900, presentation: "Bolsa 1 kg", image: "https://d3340tyzmtlo4u.cloudfront.net/users/864/images/detailed/16/Misky_Fantas%C3%ADa_Gomitas_Sabor_Eucalipto%2C_1_kg.jpg" });
+  addVariant(misky, { name: "Gomitas Eucaliptus", code: "0302", price: 9900, presentation: "Bolsa 1 kg", image: "https://acdn-us.mitiendanube.com/stores/005/651/909/products/2-2e441350ead3bc2f7317654797349016-1024-1024.webp" });
   addVariant(misky, { name: "Gomitas Jelly Roll", code: "0300", price: 9900, presentation: "Bolsa 1 kg", image: "https://acdn-us.mitiendanube.com/stores/602/902/products/daniel-verdin-6-aa9fe01be0eaefaef017498288733696-1024-1024.webp" });
 
   const nikitos = findProduct(13, "catalog-nikitos");
