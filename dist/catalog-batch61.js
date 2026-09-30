@@ -1,4 +1,4 @@
-// Match La Piñata gummy variants to the supplied photos and include the PDF's Huesos SKU.
+// Match La Piñata gummy variants to the supplied photos and expose all five catalog options.
 (() => {
   const product = (window.CATALOG_PRODUCTS_BATCH10 || []).find((item) => item.id === "catalog-pdf-la-pinata-gomitas-700");
   if (!product) throw new Error("Missing catalog family: Gomitas La Piñata x700 g");
@@ -17,36 +17,31 @@
     "66545": "Anillos · 700 g",
     "275": "Surtidas · 700 g"
   };
+  const variantsByCode = new Map((product.variants || []).map((variant) => [String(variant.code), variant]));
   const bonesCode = "0304";
-  if ((product.variants || []).some((variant) => String(variant.code) === bonesCode)) {
-    throw new Error("La Piñata Huesos already exists; refusing duplicate SKU");
+  if (!variantsByCode.has(bonesCode)) {
+    const bones = {
+      name: names[bonesCode], code: bonesCode, price: 4990,
+      presentation: "Bolsa 700 g", image: photos[bonesCode], inStock: false
+    };
+    product.variants.push(bones);
+    variantsByCode.set(bonesCode, bones);
   }
-  product.variants.push({
-    name: names[bonesCode],
-    code: bonesCode,
-    price: 4990,
-    presentation: "Bolsa x700 g",
-    image: photos[bonesCode],
-    inStock: false
-  });
-  product.codes ||= [];
-  product.codes.push(bonesCode);
 
-  for (const variant of product.variants) {
-    const code = String(variant.code);
-    if (photos[code]) {
-      variant.name = names[code];
-      variant.image = photos[code];
-      delete variant.imageCrop;
-    }
-  }
+  const orderedCodes = ["0304", "0766", "0273", "66545", "275"];
+  product.variants = orderedCodes.map((code) => {
+    const variant = variantsByCode.get(code);
+    if (!variant) throw new Error(`Missing La Piñata SKU ${code}`);
+    variant.name = names[code];
+    variant.image = photos[code];
+    delete variant.imageCrop;
+    return variant;
+  });
+  product.codes = orderedCodes;
   product.image = photos[bonesCode];
   product.skuCount = product.variants.length;
   product.unit = `${product.skuCount} variedades disponibles`;
-  product.coverImages = ["0304", "0766", "0273", "66545", "275"].map((code) => ({
-    src: photos[code],
-    label: names[code]
-  }));
+  product.coverImages = orderedCodes.map((code) => ({ src: photos[code], label: names[code] }));
 
   window.CATALOG_PRODUCTS_BATCH61 = [];
 })();
