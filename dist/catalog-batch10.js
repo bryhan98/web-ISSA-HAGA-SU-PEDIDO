@@ -32,27 +32,29 @@ window.CATALOG_PRODUCTS_BATCH10 = [
   {
     id: "catalog-pdf-parnor-dulces",
     code: "",
-    codes: ["0448", "257", "0451", "0452", "0453"],
+    codes: ["0448", "257", "0451", "0452", "0453", "0230"],
     name: "Galletitas dulces ParNor",
     category: "Cereales y galletitas",
     price: 0,
-    unit: "5 variedades disponibles",
+    unit: "6 variedades disponibles",
     image: "https://cdn11.bigcommerce.com/s-3stx4pub31/images/stencil/1280x1280/products/4709/12634/mini-mantecadas-butter-cookies-170-g-1__81228.1640804866.jpg?c=2%3Fimbypass%3Don",
     variants: [
       { name: "Mantecadas · 170 g", code: "0448", price: 890, presentation: "Paquete x170 g", image: "https://cdn11.bigcommerce.com/s-3stx4pub31/images/stencil/1280x1280/products/4709/12634/mini-mantecadas-butter-cookies-170-g-1__81228.1640804866.jpg?c=2%3Fimbypass%3Don" },
       { name: "Mini Marmoladas · 170 g", code: "257", price: 890, presentation: "Paquete x170 g", image: "https://www.parnor.com.ar/web/wp-content/uploads/2014/11/MINI-MARMOLADAS-1.png" },
       { name: "Morochitas · 140 g", code: "0451", price: 890, presentation: "Paquete x140 g", image: "https://acdn-us.mitiendanube.com/stores/516/580/products/whatsapp-image-2024-04-18-at-10-06-09-3-c6f4988acf3bdeb50117134467276989-1024-1024.webp" },
       { name: "Pepitas · 160 g", code: "0452", price: 890, presentation: "Paquete x160 g", image: "https://http2.mlstatic.com/D_Q_NP_999519-MLU77742204670_072024-O.webp" },
-      { name: "Suavecitas · 140 g", code: "0453", price: 890, presentation: "Paquete x140 g", image: "https://www.parnor.com.ar/web/wp-content/uploads/2014/11/SUAVECITAS-2.png" }
+      { name: "Suavecitas · 140 g", code: "0453", price: 890, presentation: "Paquete x140 g", image: "https://www.parnor.com.ar/web/wp-content/uploads/2014/11/SUAVECITAS-2.png" },
+      { name: "Mini Chips Black · 120 g", code: "0230", price: 960, presentation: "Paquete x120 g", image: "https://acdn-us.mitiendanube.com/stores/516/580/products/whatsapp-image-2024-04-18-at-10-06-09-1-ba4dfdbf4cc602666917134461011491-1024-1024.webp" }
     ],
     catalog: true,
-    skuCount: 5,
+    skuCount: 6,
     coverImages: [
       { src: "https://cdn11.bigcommerce.com/s-3stx4pub31/images/stencil/1280x1280/products/4709/12634/mini-mantecadas-butter-cookies-170-g-1__81228.1640804866.jpg?c=2%3Fimbypass%3Don", label: "Mantecadas · 170 g" },
       { src: "https://www.parnor.com.ar/web/wp-content/uploads/2014/11/MINI-MARMOLADAS-1.png", label: "Mini Marmoladas · 170 g" },
       { src: "https://acdn-us.mitiendanube.com/stores/516/580/products/whatsapp-image-2024-04-18-at-10-06-09-3-c6f4988acf3bdeb50117134467276989-1024-1024.webp", label: "Morochitas · 140 g" },
       { src: "https://http2.mlstatic.com/D_Q_NP_999519-MLU77742204670_072024-O.webp", label: "Pepitas · 160 g" },
-      { src: "https://www.parnor.com.ar/web/wp-content/uploads/2014/11/SUAVECITAS-2.png", label: "Suavecitas · 140 g" }
+      { src: "https://www.parnor.com.ar/web/wp-content/uploads/2014/11/SUAVECITAS-2.png", label: "Suavecitas · 140 g" },
+      { src: "https://acdn-us.mitiendanube.com/stores/516/580/products/whatsapp-image-2024-04-18-at-10-06-09-1-ba4dfdbf4cc602666917134461011491-1024-1024.webp", label: "Mini Chips Black · 120 g" }
     ]
   },
   {
