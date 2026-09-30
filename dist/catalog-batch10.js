@@ -10,7 +10,7 @@ window.CATALOG_PRODUCTS_BATCH10 = [
     image: "https://jumboargentina.vtexassets.com/arquivos/ids/789727/Galletitas-Pitusas-Mini-Black-X130g-1-985815.jpg?v=638267601755770000",
     variants: [
       { name: "Black · 130 g", code: "96427", price: 960, presentation: "Paquete x130 g", image: "https://jumboargentina.vtexassets.com/arquivos/ids/789727/Galletitas-Pitusas-Mini-Black-X130g-1-985815.jpg?v=638267601755770000" },
-      { name: "Chocolate · 160 g", code: "0487", price: 960, presentation: "Paquete x160 g", image: "https://acdn-us.mitiendanube.com/stores/798/865/products/72661401-f8dca35538442360c016639296378837-1024-1024.webp" },
+      { name: "Chocolate · 160 g", code: "0487", price: 960, presentation: "Paquete x160 g", image: "assets/catalog/pitusas-chocolate.png" },
       { name: "Frutilla · 160 g", code: "0468", price: 960, presentation: "Paquete x160 g", image: "https://acdn-us.mitiendanube.com/stores/516/580/products/whatsapp-image-2024-04-18-at-10-06-09-5-c2b67f69ea28f87b5e17134456733040-1024-1024.webp" },
       { name: "Jalea frambuesa · 140 g", code: "0469", price: 960, presentation: "Paquete x140 g", image: "https://masonlineprod.vtexassets.com/arquivos/ids/161792/Galletitas--Jalea-Frambuesa-Pitusas-140gr-1-166496.jpg?v=637835132217700000" },
       { name: "Limón · 160 g", code: "0470", price: 960, presentation: "Paquete x160 g", image: "https://d2r9epyceweg5n.cloudfront.net/stores/001/108/127/products/pitusas-limon1-45b10a853c9adeac6816040994373273-1024-1024.png" },
@@ -21,7 +21,7 @@ window.CATALOG_PRODUCTS_BATCH10 = [
     skuCount: 7,
     coverImages: [
       { src: "https://jumboargentina.vtexassets.com/arquivos/ids/789727/Galletitas-Pitusas-Mini-Black-X130g-1-985815.jpg?v=638267601755770000", label: "Black · 130 g" },
-      { src: "https://acdn-us.mitiendanube.com/stores/798/865/products/72661401-f8dca35538442360c016639296378837-1024-1024.webp", label: "Chocolate · 160 g" },
+      { src: "assets/catalog/pitusas-chocolate.png", label: "Chocolate · 160 g" },
       { src: "https://acdn-us.mitiendanube.com/stores/516/580/products/whatsapp-image-2024-04-18-at-10-06-09-5-c2b67f69ea28f87b5e17134456733040-1024-1024.webp", label: "Frutilla · 160 g" },
       { src: "https://masonlineprod.vtexassets.com/arquivos/ids/161792/Galletitas--Jalea-Frambuesa-Pitusas-140gr-1-166496.jpg?v=637835132217700000", label: "Jalea frambuesa · 140 g" },
       { src: "https://d2r9epyceweg5n.cloudfront.net/stores/001/108/127/products/pitusas-limon1-45b10a853c9adeac6816040994373273-1024-1024.png", label: "Limón · 160 g" },

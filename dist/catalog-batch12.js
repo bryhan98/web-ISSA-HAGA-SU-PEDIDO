@@ -9,13 +9,13 @@ window.CATALOG_PRODUCTS_BATCH12 = [
     "category": "Limpieza y hogar",
     "price": 16000,
     "unit": "Pack x 8 rollos",
-    "image": "assets/catalog/variants/306.webp",
+    "image": "assets/catalog/new-pel-premium-extreme.png",
     "variants": [],
     "catalog": true,
     "skuCount": 1,
     "coverImages": [
       {
-        "src": "assets/catalog/variants/306.webp",
+        "src": "assets/catalog/new-pel-premium-extreme.png",
         "label": "Rollo de cocina"
       }
     ]
