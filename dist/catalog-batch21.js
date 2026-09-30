@@ -31,7 +31,7 @@
     code: "0481",
     price: 5000,
     presentation: "Bolsa 500 g",
-    image: "https://www.zanettigolosinas.com.ar/datos/uploads/mod_catalogo/32431/diseno-sin-titulo-66-683cd7c2afb91.png"
+    image: "https://www.masivos.com/images/img_comp/15555.jpg"
   });
 
   const lince = {
