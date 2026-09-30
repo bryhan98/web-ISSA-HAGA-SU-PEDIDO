@@ -219,4 +219,54 @@
     hisopos,
     tulipan
   ];
+
+  const yummy = findProduct(16, "catalog-yummy-gomitas");
+  const yummy500g = yummy.variants.filter((variant) => variant.presentation.includes("500 g"));
+  const yummyX12 = yummy.variants.filter((variant) => variant.presentation.includes("x 12"));
+  const yummyX36 = yummy.variants.filter((variant) => variant.presentation.includes("x 36"));
+  const makeYummyFamily = (id, name, variants) => ({
+    id,
+    code: "",
+    codes: variants.map((variant) => variant.code),
+    name,
+    category: yummy.category,
+    price: 0,
+    unit: `${variants.length} opciones disponibles`,
+    image: variants[0]?.image || yummy.image,
+    variants,
+    catalog: true,
+    skuCount: variants.length,
+    coverImages: variants.filter((variant) => variant.image).map((variant) => ({ src: variant.image, label: variant.name }))
+  });
+
+  const migrateYummyVariants = (family, variants) => {
+    family.migratedVariantsFrom = variants.map((variant) => ({
+      id: "catalog-yummy-gomitas",
+      sourceVariant: variant.name,
+      variant: variant.name
+    }));
+    return family;
+  };
+
+  const frutitasRellenas = yummyX36.find((variant) => variant.code === "96397");
+  const rolloSurtido = yummyX12.find((variant) => variant.code === "379");
+  if (frutitasRellenas) {
+    frutitasRellenas.image = "https://acdn-us.mitiendanube.com/stores/516/580/products/yummy-frutitas-b8c3d3add5260c3c7517755704259341-1024-1024.webp";
+  }
+  if (rolloSurtido) {
+    rolloSurtido.image = "https://depositoelmayorista.com.ar/wp-content/uploads/2026/04/Diseno-sin-titulo-2026-04-29T153529.931-600x600.png";
+  }
+
+  yummy.name = "Yummy Gomitas 500 g";
+  yummy.variants = yummy500g;
+  yummy.codes = yummy500g.map((variant) => variant.code);
+  yummy.unit = `${yummy500g.length} opciones disponibles`;
+  yummy.image = yummy500g[0]?.image || yummy.image;
+  yummy.skuCount = yummy500g.length;
+  yummy.coverImages = yummy500g.filter((variant) => variant.image).map((variant) => ({ src: variant.image, label: variant.name }));
+
+  window.CATALOG_PRODUCTS_BATCH21.push(
+    migrateYummyVariants(makeYummyFamily("catalog-yummy-gomitas-x12", "Yummy Gomitas x 12", yummyX12), yummyX12),
+    migrateYummyVariants(makeYummyFamily("catalog-yummy-gomitas-x36", "Yummy Gomitas x 36", yummyX36), yummyX36)
+  );
 })();
