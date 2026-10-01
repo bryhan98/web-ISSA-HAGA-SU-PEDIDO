@@ -1,6 +1,6 @@
 // Match each Pastillas Mentitas Lacasa option to its supplied flavor photo.
 (() => {
-  const product = (window.CATALOG_PRODUCTS_BATCH26 || []).find((item) => item.id === "catalog-pdf-mentitas-lacasa");
+  const product = (window.CATALOG_PRODUCTS_BATCH9 || []).find((item) => item.id === "catalog-pdf-mentitas-lacasa");
   if (!product) throw new Error("Missing catalog family: Pastillas Mentitas Lacasa");
   const photos = {
     "0408": "assets/catalog/variants/mentitas-lacasa-cherry-0408.png",
