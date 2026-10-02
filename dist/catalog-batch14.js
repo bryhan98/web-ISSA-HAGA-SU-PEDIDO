@@ -159,7 +159,7 @@ window.CATALOG_PRODUCTS_BATCH14 = [
     "codes": [
       "0104",
       "0285",
-      "0369"
+      "369"
     ],
     "name": "Top Line 7 Chicles",
     "category": "Golosinas y chocolates",
@@ -183,7 +183,7 @@ window.CATALOG_PRODUCTS_BATCH14 = [
       },
       {
         "name": "Xplosive Mint · x16",
-        "code": "0369",
+        "code": "369",
         "price": 13296,
         "presentation": "Display x16 unidades",
         "image": "https://http2.mlstatic.com/D_NQ_NP_977066-MLA53990608093_022023-O.webp"
