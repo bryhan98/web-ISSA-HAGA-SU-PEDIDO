@@ -178,9 +178,9 @@ function orderLines(){
     const p=productById(item.id);if(!p)return;
     const selected=selectedVariants(item);
     if(selected.length){
-      selected.forEach(([name,qty])=>{const variant=variantFor(p,name),price=Number(variant?.price)||0;lines.push({code:variant?.code||p.code||p.id,name:p.name,detail:name,presentation:variantPresentation(p,name),qty,price,subtotal:price*qty,note:item.note||''})});
+      selected.forEach(([name,qty])=>{const variant=variantFor(p,name),price=Number(variant?.price)||0;lines.push({code:variant?.code||p.code||p.id,name:p.name,detail:name,presentation:variantPresentation(p,name),qty,saleUnit: saleUnit(p,name),price,subtotal:price*qty,note:item.note||''})});
     }else{
-      const qty=safeQty(item.qty,0),price=Number(p.price)||0;if(qty)lines.push({code:p.code||p.id,name:p.name,detail:p.variants.length?'Sin gustos especificados':p.unit,qty,price,subtotal:price*qty,note:item.note||''});
+      const qty=safeQty(item.qty,0),price=Number(p.price)||0;if(qty)lines.push({code:p.code||p.id,name:p.name,detail:p.variants.length?'Sin gustos especificados':p.unit,qty,saleUnit: saleUnit(p),price,subtotal:price*qty,note:item.note||''});
     }
   });
   return lines;
@@ -262,9 +262,9 @@ function renderCart(){
   $('#cartItems').innerHTML=entries.map(item=>{
     const p=productById(item.id),selected=selectedVariants(item),subtotal=itemTotal(item,p),pending=itemHasPending(item,p);
     const details=p.variants.length
-      ? `<div class="cart-variant-list">${selected.length?selected.map(([name,qty])=>{const variant=variantFor(p,name);return `<div class="cart-variant-line"><span>${name}${variant?.code?` · Cód. ${variant.code}`:''}</span><b>x ${qty}</b></div>`}).join(''):`<div class="cart-variant-line missing-variants"><span>Falta elegir opciones</span><b>x ${safeQty(item.qty,0)}</b></div>`}<button class="edit-variants" data-edit-variants type="button">Editar opciones y cantidades</button></div>`
+      ? `<div class="cart-variant-list">${selected.length?selected.map(([name,qty])=>{const variant=variantFor(p,name);return `<div class="cart-variant-line"><span>${name}${variant?.code?` · Cód. ${variant.code}`:''}</span><b>${quantityLabel(qty,saleUnit(p,name))}</b></div>`}).join(''):`<div class="cart-variant-line missing-variants"><span>Falta elegir opciones</span><b>x ${safeQty(item.qty,0)}</b></div>`}<button class="edit-variants" data-edit-variants type="button">Editar opciones y cantidades</button></div>`
       : '';
-    const controls=p.variants.length?'':`<div class="cart-item-controls"><button data-cart-minus type="button">−</button><b>${safeQty(item.qty,1)}</b><button data-cart-plus type="button">+</button></div>`;
+    const controls=p.variants.length?'':`<div class="cart-item-controls"><button data-cart-minus type="button">−</button><b>${quantityLabel(item.qty,saleUnit(p))}</b><button data-cart-plus type="button">+</button></div>`;
     return `<div class="cart-item" data-id="${p.id}"><img class="${p.catalog?'catalog-cart-image':''}" src="${p.image}" alt=""><div><h3>${p.name}</h3><span class="cart-item-price">${pending?'Precio a confirmar':`Subtotal ${formatMoney(subtotal)}`}</span>${controls}</div><button class="remove-item" data-remove type="button" aria-label="Quitar">×</button>${details}<input class="line-note" data-note value="${(item.note||'').replace(/"/g,'&quot;')}" placeholder="Otra aclaración opcional"></div>`;
   }).join('');
   const total=entries.reduce((sum,i)=>sum+itemTotal(i),0);const uncertain=entries.some(i=>itemHasPending(i));
@@ -272,7 +272,11 @@ function renderCart(){
 }
 function changeProductQty(card,delta){const input=card.querySelector('input');input.value=Math.max(1,Math.min(999,(parseInt(input.value)||1)+delta))}
 function addFromCard(card){const id=card.dataset.id;const qty=Math.max(1,parseInt(card.querySelector('input').value)||1);cart[id]={id,qty:(cart[id]?.qty||0)+qty,note:cart[id]?.note||''};saveCart();renderProducts();renderCatalogProducts();showToast(`${productById(id).name} agregado`)}
-function updateVariantTotal(){const total=[...$('#variantList').querySelectorAll('input')].reduce((sum,input)=>sum+safeQty(input.value,0),0);$('#variantTotalQty').textContent=`${total} ${total===1?'unidad':'unidades'}`}
+function updateVariantTotal(){
+  const p=productById(activeVariantId),quantities={};
+  [...$('#variantList').querySelectorAll('.variant-row')].forEach(row=>{const v=p?.variants[Number(row.dataset.variantIndex)],qty=safeQty(row.querySelector('input').value,0);if(qty){const unit=saleUnit(p,v?.name);quantities[unit]=(quantities[unit]||0)+qty}});
+  $('#variantTotalQty').textContent=Object.entries(quantities).map(([unit,qty])=>quantityLabel(qty,unit)).join(' + ')||'Sin selección';
+}
 function openVariantPicker(id){
   const p=productById(id);if(!p?.variants.length)return;activeVariantId=id;const item=cart[id]||{variants:{},note:''};
   const availableVariantCount=p.variants.filter(v=>!variantIsUnavailable(p,v)).length;
@@ -295,7 +299,22 @@ function showImageFromTarget(target){const crop=target.dataset.zoomCols?{cols:Nu
 function orderData(){const fd=new FormData($('#checkoutForm'));return Object.fromEntries(fd.entries())}
 function validateForm(){if(!$('#checkoutForm').reportValidity())return false;return true}
 function wrapText(text,max=63){const words=pdfText(text).split(/\s+/);const lines=[];let line='';for(const word of words){if((line+' '+word).trim().length>max){lines.push(line);line=word}else line=(line+' '+word).trim()}if(line)lines.push(line);return lines}
-function quantityLabel(qty){const amount=safeQty(qty,0);return `${amount} ${amount===1?'unidad':'unidades'}`}
+// The purchase presentation comes before any wholesale packing information.
+// A bag followed by “caja x 12” is sold by bag, not by box.
+function saleUnit(p,name){
+  const variant=variantFor(p,name);
+  if(variant?.saleUnit||p?.saleUnit)return variant?.saleUnit||p.saleUnit;
+  const namedPresentation=/^(?:bolsas?|cajas?|displays?|paquetes?|packs?|tiras?|estuches?|unidad(?:es)?|c\/u)\b/i.test(name||'')?name:'';
+  const presentation=normalize(variant?.presentation||namedPresentation||p?.unit||'').split('·')[0].trim();
+  if(/^(?:c\/u|unidad|fraccionad)/.test(presentation))return 'unidad';
+  const firstPack=presentation.match(/\b(bolsas?|cajas?|displays?|paquetes?|packs?|tiras?|estuches?|bultos?)\b/);
+  if(!firstPack)return 'unidad';
+  return firstPack[1].replace(/s$/,'');
+}
+function quantityLabel(qty,unit='unidad'){
+  const amount=safeQty(qty,0),plural={unidad:'unidades',bolsa:'bolsas',caja:'cajas',display:'displays',paquete:'paquetes',pack:'packs',tira:'tiras',estuche:'estuches',bulto:'bultos'};
+  return `${amount} ${amount===1?unit:(plural[unit]||unit)}`;
+}
 async function generatePDF(download=true,orderMeta=null){
   const data=orderData();const {PDFDocument,StandardFonts,rgb}=PDFLib;const doc=await PDFDocument.create();const regular=await doc.embedFont(StandardFonts.Helvetica);const bold=await doc.embedFont(StandardFonts.HelveticaBold);const gold=rgb(.66,.45,.18),dark=rgb(.08,.08,.08),muted=rgb(.38,.38,.38),line=rgb(.78,.76,.72),soft=rgb(.97,.96,.94),white=rgb(1,1,1);const A4=[595.28,841.89];let page,y;
   const addPage=()=>{page=doc.addPage(A4);y=800;page.drawRectangle({x:0,y:786,width:A4[0],height:56,color:dark});page.drawText('ISSA',{x:38,y:807,size:22,font:bold,color:rgb(.91,.72,.36)});page.drawText('DISTRIBUIDORA  |  PEDIDO MAYORISTA',{x:104,y:812,size:9,font:bold,color:white});page.drawText('Pedido sujeto a revision y confirmacion del vendedor',{x:104,y:798,size:7,font:regular,color:rgb(.72,.72,.72)});page.drawText('Esta boleta no es una factura. Precios y disponibilidad sujetos a confirmacion.',{x:38,y:28,size:7,font:regular,color:muted});y=760};
@@ -326,7 +345,7 @@ async function generatePDF(download=true,orderMeta=null){
     tableColumns.slice(1,-1).forEach(x=>page.drawLine({start:{x,y:bottom},end:{x,y:top},thickness:.6,color:line}));
     page.drawText(item.code,{x:40,y:top-20,size:7.5,font:bold,color:gold});
     descriptionLines.forEach((text,index)=>page.drawText(text,{x:80,y:top-16-index*10,size:7.6,font:regular,color:dark}));
-    const qtyText=pdfText(quantityLabel(item.qty));drawRight(qtyText,416,top-20,6.8,bold,dark);
+    const qtyText=pdfText(quantityLabel(item.qty,item.saleUnit));drawRight(qtyText,416,top-20,6.8,bold,dark);
     const unitPrice=item.price?pdfText(formatMoney(Number(item.price)||0)):'A confirmar';drawRight(unitPrice,485,top-20,7,bold,item.price?dark:muted);
     const subtotal=item.price?pdfText(formatMoney(Number(item.subtotal)||0)):'A confirmar';drawRight(subtotal,555,top-20,7,bold,item.price?dark:muted);
     y=bottom;
@@ -343,7 +362,7 @@ function whatsappMessage(data,meta){
   const lines=orderLines().flatMap((item,index)=>{
     const detail=[item.detail,item.presentation].filter(Boolean).join(' · '),product=`*${index+1}. ${item.name} — ${detail}*\nCódigo ISSA: *${item.code}*${item.note?`\nAclaración: ${item.note}`:''}`;
     const price=item.price?formatMoney(item.price):'A confirmar',subtotal=item.price?formatMoney(item.subtotal):'A confirmar';
-    return [product,`Cantidad: *${quantityLabel(item.qty)}*`,`Precio unitario: *${price}*`,`Subtotal: *${subtotal}*`,''];
+    return [product,`Cantidad: *${quantityLabel(item.qty,item.saleUnit)}*`,`Precio unitario: *${price}*`,`Subtotal: *${subtotal}*`,''];
   });
   return `*NUEVO PEDIDO ISSA*\n${meta.code}\n\n*Cliente:* ${data.name}\n*Comercio:* ${data.business}\n*Teléfono:* ${data.phone}\n*Localidad:* ${data.city}\n*Dirección:* ${data.address||'-'}\n\n*DETALLE DEL PEDIDO*\n\n${lines.join('\n').trim()}\n\n*TOTAL GENERAL ESTIMADO: ${formatMoney(Number(meta.total)||0)}*${meta.hasPending?'\n+ Productos con precio a confirmar':''}\n\n${data.notes?`*Observaciones:* ${data.notes}\n\n`:''}Pedido generado desde el catálogo web de Distribuidora ISSA. Por favor revisar disponibilidad y total final.`;
 }
