@@ -29,3 +29,9 @@
 .hero-visual .floating-note{z-index:2}
 @media(max-width:1000px){.hero-video-frame{height:440px}}
 @media(max-width:650px){.hero-video-frame{height:320px;border-radius:12px}}
+
+/* Keep the order guide below the video, clear of playback and controls. */
+.hero-visual{height:auto;min-height:560px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px}
+.hero-visual .floating-note{position:relative;right:auto;bottom:auto;flex:none;text-align:center;max-width:100%}
+@media(max-width:1000px){.hero-visual{min-height:480px}}
+@media(max-width:650px){.hero-visual{min-height:340px;gap:14px}}
