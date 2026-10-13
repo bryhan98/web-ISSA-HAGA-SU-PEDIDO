@@ -94,8 +94,8 @@
   bicolor.migratedFrom=[{id:bicolor.id,variant:'Bicolor'},{id:nucita.id,variant:'Frutilla'}];
   removeProduct(nucita);
   const gummies=find('catalog-yummy-gomitas');
-  croack.name='Yummy Gomitas 500 g';croack.image=photo('yummy-gomitas-500g');
-  croack.variants=[...gummies.variants,{name:'Croack 500 g',code:'283',price:4900,presentation:'Bolsa 500 g',image:photo('yummy-gomitas-500g')}];
+  croack.name='Yummy Gomitas 500 g';croack.image='assets/catalog/variants/yummy-croack-500g-individual-20261013.png';
+  croack.variants=[...gummies.variants,{name:'Croack 500 g',code:'283',price:4900,presentation:'Bolsa 500 g',image:croack.image}];
   croack.migratedVariantsFrom=gummies.variants.map(v=>({id:gummies.id,sourceVariant:v.name,variant:v.name}));
   croack.migratedFrom=[{id:croack.id,variant:'Croack 500 g'}];
   removeProduct(gummies);
