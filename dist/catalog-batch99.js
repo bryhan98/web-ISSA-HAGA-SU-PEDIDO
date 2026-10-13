@@ -64,6 +64,41 @@
   find('catalog-pdf-96352').variants.push({name:'Mediatarde Sandwich tripack',code:'96352',price:1590,presentation:'Pack familiar x 3 · caja x 16',image:'assets/products/169-20261012.webp'});
   delete find('catalog-pdf-96352').coverImages;
   for (const id of ['catalog-pdf-283','catalog-pdf-0200','catalog-pdf-160','catalog-pdf-0397','catalog-bon-o-bon-clasico','catalog-push-pop-duo','catalog-vocacion-clasica']) delete find(id).coverImages;
+  // Use the supplier photos explicitly supplied by the owner for the full catalog.
+  const photo = name => `assets/catalog/variants/${name}-corregida-20261013.png`;
+  find('catalog-vocacion-clasica').image=photo('vocacion-acaramelada');
+  variant('catalog-cilo-galletitas','5520').image=photo('cilo-anillos-vainilla');
+  delete find('catalog-cilo-galletitas').coverImages;
+  variant(budin.id,'0386').image=photo('nevares-budin-chocolate');
+  variant(budin.id,'454').image=photo('nevares-budin-limon');
+  budin.image=photo('nevares-budin-chocolate');
+  variant('catalog-pdf-96352','96352').image=photo('mediatarde-sandwich-tripack');
+  find('catalog-pdf-96352').image=photo('mediatarde-sandwich-tripack');
+  find('catalog-bon-o-bon-clasico').image=photo('bon-o-bon-original');
+  find('catalog-push-pop-duo').image=photo('push-pop');
+  find('catalog-pdf-0397').image=photo('misky-masticables-surtidos');
+  extra.find(p=>p.id==='catalog-yummy-croack-xl').image=photo('yummy-croack-xl');
+  const removeProduct = p => {
+    for(let batch=1;batch<=98;batch++) {
+      const list=window[`CATALOG_PRODUCTS_BATCH${batch}`]||[];
+      const index=list.indexOf(p);if(index>=0)list.splice(index,1);
+    }
+    products.splice(products.indexOf(p),1);
+  };
+  const bicolor=find('catalog-pdf-160');
+  bicolor.name='Nucita Bicolor y Frutilla';bicolor.code='';bicolor.image=photo('nucita-bicolor');
+  bicolor.variants=[
+    {name:'Bicolor',code:'160',price:5900,presentation:'Display x 48 unidades',image:photo('nucita-bicolor')},
+    {name:'Frutilla',code:'0200',price:5900,presentation:'Display x 48 unidades',image:photo('nucita-frutilla')}
+  ];
+  bicolor.migratedFrom=[{id:bicolor.id,variant:'Bicolor'},{id:nucita.id,variant:'Frutilla'}];
+  removeProduct(nucita);
+  const gummies=find('catalog-yummy-gomitas');
+  croack.name='Yummy Gomitas 500 g';croack.image=photo('yummy-gomitas-500g');
+  croack.variants=[...gummies.variants,{name:'Croack 500 g',code:'283',price:4900,presentation:'Bolsa 500 g',image:photo('yummy-gomitas-500g')}];
+  croack.migratedVariantsFrom=gummies.variants.map(v=>({id:gummies.id,sourceVariant:v.name,variant:v.name}));
+  croack.migratedFrom=[{id:croack.id,variant:'Croack 500 g'}];
+  removeProduct(gummies);
   for (const p of [...products,...extra]) {
     const variants=p.variants||[];
     for (const v of (variants.length ? variants : [p])) {
