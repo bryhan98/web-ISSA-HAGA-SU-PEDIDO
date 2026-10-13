@@ -324,6 +324,7 @@ async function generatePDF(download=true,orderMeta=null){
   };
   addPage();
   const meta=orderMeta||createOrderMeta(),now=meta.now,code=meta.code;
+  page.drawText(`Vendedor: ${pdfText(data.seller||'-').slice(0,60)}`,{x:38,y,size:11,font:bold,color:dark});y-=24;
   page.drawText(`BOLETA DE PEDIDO  ${code}`,{x:38,y,size:13,font:bold,color:dark});page.drawText(now.toLocaleString('es-AR'),{x:430,y,size:8,font:regular,color:muted});y-=28;
   const info=[['Cliente',data.name],['Comercio',data.business],['Telefono',data.phone],['Localidad',data.city],['Direccion',data.address||'-']];for(let i=0;i<info.length;i++){const [k,v]=info[i];const x=i%2?310:38;if(i&&i%2===0)y-=22;page.drawText(`${k}:`,{x,y,size:8,font:bold,color:muted});page.drawText(pdfText(v).slice(0,39),{x:x+55,y,size:9,font:regular,color:dark})}y-=31;
   drawTableHeader();
@@ -355,7 +356,7 @@ function whatsappMessage(data,meta){
     const price=item.price?formatMoney(item.price):'A confirmar',subtotal=item.price?formatMoney(item.subtotal):'A confirmar';
     return [product,`Cantidad: *${quantityLabel(item.qty,item.saleUnit)}*`,`Precio unitario: *${price}*`,`Subtotal: *${subtotal}*`,''];
   });
-  return `*NUEVO PEDIDO ISSA*\n${meta.code}\n\n*Cliente:* ${data.name}\n*Comercio:* ${data.business}\n*Teléfono:* ${data.phone}\n*Localidad:* ${data.city}\n*Dirección:* ${data.address||'-'}\n\n*DETALLE DEL PEDIDO*\n\n${lines.join('\n').trim()}\n\n*TOTAL GENERAL ESTIMADO: ${formatMoney(Number(meta.total)||0)}*${meta.hasPending?'\n+ Productos con precio a confirmar':''}\n\n${data.notes?`*Observaciones:* ${data.notes}\n\n`:''}Pedido generado desde el catálogo web de Distribuidora ISSA. Por favor revisar disponibilidad y total final.`;
+  return `*NUEVO PEDIDO ISSA*\n${meta.code}\n\n*Vendedor:* ${data.seller||'-'}\n*Cliente:* ${data.name}\n*Comercio:* ${data.business}\n*Teléfono:* ${data.phone}\n*Localidad:* ${data.city}\n*Dirección:* ${data.address||'-'}\n\n*DETALLE DEL PEDIDO*\n\n${lines.join('\n').trim()}\n\n*TOTAL GENERAL ESTIMADO: ${formatMoney(Number(meta.total)||0)}*${meta.hasPending?'\n+ Productos con precio a confirmar':''}\n\n${data.notes?`*Observaciones:* ${data.notes}\n\n`:''}Pedido generado desde el catálogo web de Distribuidora ISSA. Por favor revisar disponibilidad y total final.`;
 }
 
 async function shareOrderPDF(){
