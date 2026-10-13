@@ -107,6 +107,8 @@
       if (!row) throw new Error(`PDF is missing catalog code: ${v.code}`);
       v.price=row[0]; v.inStock=row[1];
       if(p.id==='catalog-rinde-dos')v.presentation='Display x 10 sobres · $540 c/u';
+      // Owner confirmed that both Tereré varieties are unavailable.
+      if(p.id==='catalog-rinde-dos'&&['437','0660'].includes(v.code))v.inStock=false;
     }
     p.codes=(variants.length?variants:[p]).map(v=>v.code);
     p.skuCount=new Set(p.codes).size;
