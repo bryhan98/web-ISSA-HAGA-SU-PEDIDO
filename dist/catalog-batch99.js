@@ -66,6 +66,8 @@
   for (const id of ['catalog-pdf-283','catalog-pdf-0200','catalog-pdf-160','catalog-pdf-0397','catalog-bon-o-bon-clasico','catalog-push-pop-duo','catalog-vocacion-clasica']) delete find(id).coverImages;
   // Use the supplier photos explicitly supplied by the owner for the full catalog.
   const photo = name => `assets/catalog/variants/${name}-corregida-20261013.png`;
+  find('catalog-pdf-287').image='assets/catalog/variants/velas-largas-el-conde-x4-20261013.png';
+  delete find('catalog-pdf-287').coverImages;
   variant('catalog-bon-mase-bizcochuelo','0066').image='assets/catalog/variants/bon-mase-bizcochuelo-vainilla-20261013.png';
   variant('catalog-bon-mase-bizcochuelo','0324').image='assets/catalog/variants/bon-mase-bizcochuelo-chocolate-20261013.png';
   find('catalog-bon-mase-bizcochuelo').image=variant('catalog-bon-mase-bizcochuelo','0066').image;
