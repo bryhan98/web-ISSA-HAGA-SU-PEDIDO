@@ -1,6 +1,6 @@
 // Use the supplied image for TNT Chicle relleno x 40.
 (() => {
-  const product = (window.CATALOG_PRODUCTS_BATCH2 || []).find((item) => item.id === "catalog-tnt-caramelos");
+  const product = Array.from({length:67},(_,i)=>window[`CATALOG_PRODUCTS_BATCH${i+1}`]||[]).flat().find((item) => item.id === "catalog-tnt-caramelos");
   if (!product) throw new Error("Missing catalog family: TNT Golosinas");
   const variant = (product.variants || []).find((item) => String(item.code) === "465");
   if (!variant) throw new Error("Missing TNT Chicle relleno x 40 variant");

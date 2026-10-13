@@ -5,4 +5,3 @@
   product.image = "assets/catalog/billiken-masticables-linea.webp";
   window.CATALOG_PRODUCTS_BATCH29 = [];
 })();
-\n

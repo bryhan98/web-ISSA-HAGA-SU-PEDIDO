@@ -1,5 +1,5 @@
 (() => {
-  const products = window.CATALOG_PRODUCTS_BATCH1 || [];
+  const products = Array.from({length:83},(_,i)=>window[`CATALOG_PRODUCTS_BATCH${i+1}`]||[]).flat();
   const replaceImage = (id, image) => {
     const product = products.find((item) => item.id === id);
     if (!product) throw new Error(`Missing catalog product: ${id}`);
