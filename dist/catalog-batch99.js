@@ -66,6 +66,10 @@
   for (const id of ['catalog-pdf-283','catalog-pdf-0200','catalog-pdf-160','catalog-pdf-0397','catalog-bon-o-bon-clasico','catalog-push-pop-duo','catalog-vocacion-clasica']) delete find(id).coverImages;
   // Use the supplier photos explicitly supplied by the owner for the full catalog.
   const photo = name => `assets/catalog/variants/${name}-corregida-20261013.png`;
+  variant('catalog-bon-mase-bizcochuelo','0066').image='assets/catalog/variants/bon-mase-bizcochuelo-vainilla-20261013.png';
+  variant('catalog-bon-mase-bizcochuelo','0324').image='assets/catalog/variants/bon-mase-bizcochuelo-chocolate-20261013.png';
+  find('catalog-bon-mase-bizcochuelo').image=variant('catalog-bon-mase-bizcochuelo','0066').image;
+  delete find('catalog-bon-mase-bizcochuelo').coverImages;
   find('catalog-vocacion-clasica').image=photo('vocacion-acaramelada');
   variant('catalog-cilo-galletitas','5520').image=photo('cilo-anillos-vainilla');
   delete find('catalog-cilo-galletitas').coverImages;
