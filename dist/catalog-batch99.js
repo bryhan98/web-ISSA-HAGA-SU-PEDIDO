@@ -31,7 +31,7 @@
   removeVariant('catalog-tokke-chocolates', '0039');
   addProduct('catalog-yummy-croack-xl', '0039', 'Yummy Croack XL Aireado', 'Golosinas y chocolates', 'Display x 24 unidades · 20 g c/u', 'assets/products/174-20261012.webp');
   removeVariant('catalog-pipa-semillas', '0466');
-  find('catalog-yummy-gomitas-x12').variants.push({name:'Terror x 12',code:'0466',price:4990,presentation:'Display x 12 · 30 g c/u',image:'assets/products/167-20261012.webp'});
+  find('catalog-yummy-gomitas-x12').variants.push({name:'Terror x 12',code:'0466',price:4990,presentation:'Display x 12 · 30 g c/u',image:'assets/catalog/variants/yummy-terror-30g-individual-20261013.png'});
   delete find('catalog-yummy-gomitas-x12').coverImages;
   const croack = find('catalog-pdf-283');
   Object.assign(croack, {name:'Yummy Gomitas Croack',category:'Golosinas y chocolates',pdfCategory:'Golosinas y chocolates',unit:'Bolsa 500 g',image:'assets/products/165-20261012.webp'});
