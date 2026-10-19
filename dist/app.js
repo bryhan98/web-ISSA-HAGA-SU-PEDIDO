@@ -2,12 +2,11 @@ const WHATSAPP_NUMBER = '5491168259465';
 const PRODUCTS = [
   ["17","Alteza chocolate para taza","Almacén",1740,"C/U · 90 g"],
   ["129","Caramelos Arcor Menta Cristal","Golosinas",0,"Bolsas de 810 g / 335 g"],
-  ["161","Bon o Bon original","Golosinas",16590,"Caja x 30"],
+  ["oferta-saladix","Saladix Tira Jamón, Pizza y Calabresa","Golosinas",4620,"Tira x 6 · $770 c/u"],
   ["107","Misky gomitas Dientitos y Gusanitos","Golosinas",5000,"Bolsa x 500 g · caja x 12"],
   ["134","Turrón Misky de maní","Golosinas",11000,"Caja x 50"],
   ["154","Misky masticables surtidos","Golosinas",6300,"Bolsa x 800 g"],
   ["158","Misky gomitas Fantasía, Eucalipto y Jelly Roll","Golosinas",9900,"Bolsa x 1 kg"],
-  ["3","Bel monedas de chocolate","Golosinas",14200,"Estuche x 100"],
   ["6","Billiken masticables Yogur y Frutal","Golosinas",4200,"Bolsa x 600 g"],
   ["7","Billiken Rollo Frutal","Golosinas",4200,"Display x 12"],
   ["12","Bull Dog regaliz multicolor","Golosinas",16800,"Caja x 24"],
@@ -26,24 +25,17 @@ const PRODUCTS = [
   ["115","Espiral Búho repelente","Cuidado",0,"Paquetes x 12 / x 4"],
   ["124","Arroz Dos Hermanos largo fino","Almacén",0,"Pack x 10 · 500 g / 1 kg"],
   ["125","Arroz Dos Hermanos parboil","Almacén",8800,"Pack x 10"],
-  ["155","Pan dulce Fantoche con frutas","Galletitas",31920,"Caja x 8 · 400 g c/u"],
-  ["157","Pan dulce Fantoche con chips","Galletitas",31920,"Caja x 8 · 400 g c/u"],
-  ["162","Dos Corazones Felfort","Golosinas",25700,"Caja x 20"],
   ["140","Encendedores Fuegolandia","Hogar",5200,"Display x 25 · $208 c/u"],
   ["143","Alfajores Fulbito","Alfajores",8888,"Caja x 44 · 30 g c/u"],
   ["114","Alcohol etílico Galeón","Cuidado",1790,"C/U · 500 ml"],
   ["130","Glins galletitas rellenas Frutilla","Galletitas",1590,"C/U · 200 g"],
-  ["18","Conito Jorgito","Alfajores",11100,"Caja x 12"],
   ["137","Kinder Joy","Golosinas",31200,"Caja x 12"],
-  ["121","Queso rallado La Quesera","Almacén",13600,"Pack x 20"],
   ["50","Play Pop mini paletas","Golosinas",1800,"Pack x 50"],
   ["169","Lía Mediatarde Sandwich tripack","Galletitas",1590,"Pack familiar x 3 · caja x 16"],
   ["170","Mayonesa Natura","Almacén",12300,"Caja x 20 · 125 cm³"],
-  ["159","Budín Fantasía Nevares","Galletitas",14700,"Caja x 10 · 160 g c/u"],
   ["163","Nucita Bicolor y Frutilla","Golosinas",5900,"Caja x 48"],
   ["011","Cubanito Oblita Chocolate x 48","Galletitas",4100,"Caja x 48"],
   ["012","Cubanito Oblita Marroc x 48","Galletitas",4100,"Caja x 48"],
-  ["86","Estrellitas frutales","Golosinas",4900,"Pack x 100"],
   ["33","Frutomila masticables rellenos","Golosinas",4800,"Bolsa x 500 g"],
   ["126","Pipas clásicas","Golosinas",7200,"Display x 30"],
   ["127","Pipas gigantes","Golosinas",7200,"Display x 12"],
@@ -57,8 +49,24 @@ const PRODUCTS = [
   ["87","San Agustín fideos surtidos","Almacén",7900,"Pack x 12"],
   ["100","Pepas Tocoñato","Galletitas",1140,"C/U · 400 g"],
   ["148","Trío galletitas","Galletitas",1290,"C/U · 300 / 350 g · caja x 10 / x 12"],
-  ["131","Turimar galletitas surtidas","Galletitas",890,"C/U · 170 g · caja x 36"]
-].map(([id,name,category,price,unit])=>({id,name,category,price,unit,image:`assets/products/${id}-20261012.webp`}));
+  ["131","Turimar galletitas surtidas","Galletitas",890,"C/U · 170 g · caja x 36"],
+  ["25","Alfajor Fantoche Súper Triple 100 g","Alfajores",12720,"Caja x 12 · $1.060 c/u"],
+  ["26","Alfajor Fantoche Triple blanco y negro","Alfajores",10080,"Caja x 12 · $840 c/u"],
+  ["103","Alfajor Fantoche Triple Red Velvet","Alfajores",12720,"Caja x 12 · 100 g · $1.060 c/u"],
+  ["oferta-fantoche-raul","Alfajor Fantoche Pescado Raúl blanco y negro","Alfajores",13140,"Caja x 18 · 50 g · $730 c/u"],
+  ["157","Pan dulce Fantoche con chips","Galletitas",31920,"Caja x 8 · 400 g c/u"],
+  ["155","Pan dulce Fantoche con frutas","Galletitas",31920,"Caja x 8 · 400 g c/u"],
+  ["oferta-fierita-chicle","Fierita chicle globo surtido","Golosinas",3500,"Display x 100 · $35 c/u"],
+  ["oferta-fierita-relleno","Fierita chicle relleno","Golosinas",3300,"Display x 50 · $66 c/u"],
+  ["oferta-pinballs","Open Candy Pinballs masticable","Golosinas",4800,"Bolsa x 200 unidades"],
+  ["oferta-tennis","Chicle Open Candy Tennis","Golosinas",3600,"Display x 30 · $120 c/u"],
+  ["oferta-maestros-chicle","Fierita chicle relleno Maestros del Terror","Golosinas",3300,"Display x 50 · $66 c/u"],
+  ["oferta-fierita-tatto","Fierita chupetín Tatto Maestros del Terror y Frutilla","Golosinas",6800,"Display x 50 · $136 c/u"],
+  ["86","Estrellitas frutales","Golosinas",4900,"Pack x 100"],
+  ["oferta-guaymallen-rubi","Guaymallén Simple Rubí 48 g","Alfajores",14760,"Caja cerrada x 24 · $615 c/u"],
+  ["oferta-bel-bombones","Bel bombones surtidos","Golosinas",5900,"Bolsa x 450 g"],
+  ["3","Bel monedas de chocolate","Golosinas",14200,"Estuche x 100"]
+].map(([id,name,category,price,unit])=>({id,code:id.startsWith('oferta-')?'—':id,name,category,price,unit,image:`assets/offers-20261019/${id}.webp`}));
 
 const VARIANTS = {
   "6":[["Yogur",4200],["Frutal",4200]],
@@ -74,7 +82,6 @@ const VARIANTS = {
   "143":[["Chocolate",8888],["Maní",8888],["Black",8888]],
   "148":[["Pepas mini · 300 g · caja x 10",1290],["Besitos · 300 g · caja x 10",1290],["Biscotti · 300 g · caja x 10",1290],["Surtidas Varieté · 350 g · caja x 10",1290],["Frolitas · 300 g · caja x 12",1290],["Pepas con chips · 300 g · caja x 12",1290],["Tri Choc · 300 g · caja x 12",1290]],
   "158":[["Fantasía · 1 kg",9900],["Eucalipto · 1 kg",9900],["Jelly Roll · 1 kg",9900]],
-  "159":[["Chocolate",14700],["Limón",14700]],
   "163":[["Bicolor",5900],["Frutilla",5900]],
   "164":[["Ositos",4900],["Cien Pies",4900],["Moritas",4900],["Sandía",4900]],
   "165":[["Dientes",4900],["Frutilla con crema",4900],["Croack",4900],["Bananitas",4900]],
@@ -82,7 +89,13 @@ const VARIANTS = {
   "167":[["Ositos clásicos",4990],["Animalitos",4990],["Dino",4990],["Piecitos ácidos",4990],["Frutilla con crema",4990],["Terror",4990],["Moritas",4990],["Ositos ácidos",4990]],
   "168":[["Dulce de leche",3996],["Menta",3996],["Frutal",3996],["Cherry",3996],["Sandía",3996]],
   "171":[["Anillos",4990],["Redonditas",4990],["Eucaliptus",4990],["Huesos",4990],["Surtidas",4990]],
-  "175":[["Naranja / Banana",5400],["Naranja / Durazno",5400],["Frutilla",5400],["Ananá",5400],["Pomelo rosado",5400],["Pera",5400],["Manzana",5400],["Mix frutal",5400],["Naranja / Mango",5400],["Limón",5400],["Durazno",5400],["Naranja",5400]]
+  "175":[["Naranja / Banana",5400],["Naranja / Durazno",5400],["Frutilla",5400],["Ananá",5400],["Pomelo rosado",5400],["Pera",5400],["Manzana",5400],["Mix frutal",5400],["Naranja / Mango",5400],["Limón",5400],["Durazno",5400],["Naranja",5400]],
+  "oferta-saladix":[["Jamón",4620],["Pizza",4620],["Calabresa",4620]],
+  "26":[["Blanco",10080],["Chocolate",10080]],
+  "oferta-fantoche-raul":[["Blanco",13140],["Negro",13140]],
+  "oferta-fierita-chicle":[["Menta",3500],["Uva",3500],["Banana",3500],["Tutti",3500],["Frutilla",3500]],
+  "oferta-fierita-relleno":[["Menta",3300],["Frutilla",3300],["Tutti",3300]],
+  "oferta-fierita-tatto":[["Maestros del Terror · Multifruita",6800],["Frutilla",6800]]
 };
 PRODUCTS.forEach(p=>{p.price=Number(p.price)||0;p.variants=(VARIANTS[p.id]||[]).map(([name,price])=>({name,price:Number(price)||0}))});
 const BATCH1_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH1||[];
@@ -216,7 +229,7 @@ function coverGalleryItems(p){
 function variantIsUnavailable(p,v){return p.inStock===false||v?.inStock===false}
 function coverGalleryMarkup(p){
   const items=coverGalleryItems(p);
-  if(!items)return `<img class="product-image" src="${p.image}" alt="${p.name}" loading="lazy" data-zoom="${p.image}" role="button" tabindex="0" aria-label="Ampliar foto de ${p.name}"><span class="code-badge">${p.catalog&&p.skuCount>1?`${p.skuCount} VARIEDADES`:`CÓD. ${p.code||p.id}`}</span><button class="zoom-button" data-zoom="${p.image}" aria-label="Ampliar imagen" type="button">↗</button>`;
+  if(!items)return `<img class="product-image" src="${p.image}" alt="${p.name}" loading="lazy" data-zoom="${p.image}" role="button" tabindex="0" aria-label="Ampliar foto de ${p.name}"><span class="code-badge">${p.code==='—'?'OFERTA':p.catalog&&p.skuCount>1?`${p.skuCount} VARIEDADES`:`CÓD. ${p.code||p.id}`}</span><button class="zoom-button" data-zoom="${p.image}" aria-label="Ampliar imagen" type="button">↗</button>`;
   const columns=Math.min(4,Math.ceil(Math.sqrt(items.length)));
   return `<div class="cover-image-gallery" style="--cover-columns:${columns}" aria-label="Variedades de ${p.name}">${items.map(item=>{const crop=item.imageCrop||item.crop;const cropAttrs=crop?`data-zoom-cols="${crop.cols||1}" data-zoom-rows="${crop.rows||1}" data-zoom-index="${crop.index||0}"`:'';const visual=crop?`<span class="cover-image-crop" style="background-image:url('${item.src}');background-size:${(crop.cols||1)*100}% ${(crop.rows||1)*100}%;background-position:${(crop.cols||1)===1?0:(crop.index||0)%(crop.cols||1)/((crop.cols||1)-1)*100}% ${Math.floor((crop.index||0)/(crop.cols||1))===0?0:Math.floor((crop.index||0)/(crop.cols||1))/((crop.rows||1)-1)*100}%"></span>`:`<img src="${item.src}" alt="${item.label}" loading="lazy">`;const variant=p.variants.find(v=>v.name===item.label),unavailable=variant&&variantIsUnavailable(p,variant);return `<button class="cover-image-choice ${unavailable?'is-sold-out':''}" data-zoom="${item.src}" ${cropAttrs} aria-label="Ampliar ${item.label}${unavailable?' · sin stock':''}" type="button">${visual}<span>${item.label}</span>${unavailable?'<b class="cover-image-stock">Sin stock</b>':''}</button>`}).join('')}</div>`;
 }
