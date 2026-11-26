@@ -111,34 +111,35 @@ const VARIANTS = {
   "oferta-budin-pozo":[["Vainilla · 170 g",1080],["Con Frutas · 170 g",1080],["Con Chips · 170 g",1080],["Marmolado · 170 g",1080],["Relleno Dulce de Leche · 170 g",1080]]
 };
 PRODUCTS.forEach(p=>{p.price=Number(p.price)||0;p.variants=(VARIANTS[p.id]||[]).map(([name,price])=>({name,price:Number(price)||0}))});
-const BATCH1_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH1||[];
-const BATCH2_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH2||[];
-const BATCH3_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH3||[];
-const BATCH4_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH4||[];
-const BATCH5_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH5||[];
-const BATCH6_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH6||[];
-const BATCH7_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH7||[];
-const BATCH8_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH8||[];
-const BATCH9_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH9||[];
-const BATCH10_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH10||[];
-const BATCH11_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH11||[];
-const BATCH12_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH12||[];
-const BATCH13_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH13||[];
-const BATCH14_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH14||[];
-const BATCH15_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH15||[];
-const BATCH16_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH16||[];
-const BATCH17_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH17||[];
-const BATCH18_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH18||[];
-const BATCH19_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH19||[];
-const BATCH20_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH20||[];
-const BATCH21_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH21||[];
-const BATCH22_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH22||[];
-const BATCH23_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH23||[];
-const BATCH24_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH24||[];
-const BATCH25_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH25||[];
-const BATCH26_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH26||[];
-const BATCH27_CATALOG_PRODUCTS=window.CATALOG_PRODUCTS_BATCH27||[];
-const SUPPLIER_CATALOG_PRODUCTS=[...BATCH2_CATALOG_PRODUCTS,...BATCH3_CATALOG_PRODUCTS,...BATCH4_CATALOG_PRODUCTS,...BATCH5_CATALOG_PRODUCTS,...BATCH6_CATALOG_PRODUCTS,...BATCH7_CATALOG_PRODUCTS,...BATCH8_CATALOG_PRODUCTS,...BATCH9_CATALOG_PRODUCTS,...BATCH10_CATALOG_PRODUCTS,...BATCH11_CATALOG_PRODUCTS,...BATCH12_CATALOG_PRODUCTS,...BATCH13_CATALOG_PRODUCTS,...BATCH14_CATALOG_PRODUCTS,...BATCH15_CATALOG_PRODUCTS,...BATCH16_CATALOG_PRODUCTS,...BATCH17_CATALOG_PRODUCTS,...BATCH18_CATALOG_PRODUCTS,...BATCH19_CATALOG_PRODUCTS,...BATCH20_CATALOG_PRODUCTS,...BATCH21_CATALOG_PRODUCTS,...BATCH22_CATALOG_PRODUCTS,...BATCH23_CATALOG_PRODUCTS,...BATCH24_CATALOG_PRODUCTS,...BATCH25_CATALOG_PRODUCTS,...BATCH26_CATALOG_PRODUCTS,...BATCH27_CATALOG_PRODUCTS];
+const BATCH_LIST=Array.from({length:100},(_,idx)=>window[`CATALOG_PRODUCTS_BATCH${idx+1}`]||[]);
+const BATCH1_CATALOG_PRODUCTS=BATCH_LIST[0];
+const BATCH2_CATALOG_PRODUCTS=BATCH_LIST[1];
+const BATCH3_CATALOG_PRODUCTS=BATCH_LIST[2];
+const BATCH4_CATALOG_PRODUCTS=BATCH_LIST[3];
+const BATCH5_CATALOG_PRODUCTS=BATCH_LIST[4];
+const BATCH6_CATALOG_PRODUCTS=BATCH_LIST[5];
+const BATCH7_CATALOG_PRODUCTS=BATCH_LIST[6];
+const BATCH8_CATALOG_PRODUCTS=BATCH_LIST[7];
+const BATCH9_CATALOG_PRODUCTS=BATCH_LIST[8];
+const BATCH10_CATALOG_PRODUCTS=BATCH_LIST[9];
+const BATCH11_CATALOG_PRODUCTS=BATCH_LIST[10];
+const BATCH12_CATALOG_PRODUCTS=BATCH_LIST[11];
+const BATCH13_CATALOG_PRODUCTS=BATCH_LIST[12];
+const BATCH14_CATALOG_PRODUCTS=BATCH_LIST[13];
+const BATCH15_CATALOG_PRODUCTS=BATCH_LIST[14];
+const BATCH16_CATALOG_PRODUCTS=BATCH_LIST[15];
+const BATCH17_CATALOG_PRODUCTS=BATCH_LIST[16];
+const BATCH18_CATALOG_PRODUCTS=BATCH_LIST[17];
+const BATCH19_CATALOG_PRODUCTS=BATCH_LIST[18];
+const BATCH20_CATALOG_PRODUCTS=BATCH_LIST[19];
+const BATCH21_CATALOG_PRODUCTS=BATCH_LIST[20];
+const BATCH22_CATALOG_PRODUCTS=BATCH_LIST[21];
+const BATCH23_CATALOG_PRODUCTS=BATCH_LIST[22];
+const BATCH24_CATALOG_PRODUCTS=BATCH_LIST[23];
+const BATCH25_CATALOG_PRODUCTS=BATCH_LIST[24];
+const BATCH26_CATALOG_PRODUCTS=BATCH_LIST[25];
+const BATCH27_CATALOG_PRODUCTS=BATCH_LIST[26];
+const SUPPLIER_CATALOG_PRODUCTS=BATCH_LIST.slice(1).flat();
 const CATALOG_SECTIONS = [
   {name:'Galletitas y panificados',ids:['catalog-amor-galletitas','catalog-bon-mase-pionono','catalog-chocolinas','catalog-merengadas','catalog-glins-frutilla','catalog-mafalda-mini-bizcochos','catalog-lia-surtido','catalog-pdf-96352','catalog-terepin-pepas','catalog-toconato-pepas','catalog-tosti','catalog-trio-galletitas','catalog-turimar',...BATCH24_CATALOG_PRODUCTS.filter(p=>p.category==='Galletitas y panificados').map(p=>p.id),...BATCH25_CATALOG_PRODUCTS.filter(p=>p.category==='Galletitas y panificados').map(p=>p.id),...BATCH26_CATALOG_PRODUCTS.filter(p=>p.category==='Galletitas y panificados').map(p=>p.id),...BATCH27_CATALOG_PRODUCTS.filter(p=>p.category==='Galletitas y panificados').map(p=>p.id)]},
   {name:'Obleas, turrones y bocaditos',ids:['catalog-cubanitos-oblita','catalog-fantoche-oblea-big','catalog-oblea-bonobon','catalog-oblita-obleas','catalog-oblita-oblibon','catalog-turron-oblita','catalog-zupay-obleas']},
@@ -148,7 +149,7 @@ const CATALOG_SECTIONS = [
   ...['Cereales y galletitas','Golosinas y chocolates','Almacén','Limpieza y hogar','Cuidado personal'].map(name=>({name,ids:SUPPLIER_CATALOG_PRODUCTS.filter(p=>p.category===name).map(p=>p.id)}))
 ];
 const CATALOG_SECTION_BY_ID=Object.fromEntries(CATALOG_SECTIONS.flatMap(section=>section.ids.map(id=>[id,section.name])));
-const CATALOG_PRODUCTS=[...BATCH1_CATALOG_PRODUCTS,...BATCH2_CATALOG_PRODUCTS,...BATCH3_CATALOG_PRODUCTS,...BATCH4_CATALOG_PRODUCTS,...BATCH5_CATALOG_PRODUCTS,...BATCH6_CATALOG_PRODUCTS,...BATCH7_CATALOG_PRODUCTS,...BATCH8_CATALOG_PRODUCTS,...BATCH9_CATALOG_PRODUCTS,...BATCH10_CATALOG_PRODUCTS,...BATCH11_CATALOG_PRODUCTS,...BATCH12_CATALOG_PRODUCTS,...BATCH13_CATALOG_PRODUCTS,...BATCH14_CATALOG_PRODUCTS,...BATCH15_CATALOG_PRODUCTS,...BATCH16_CATALOG_PRODUCTS,...BATCH17_CATALOG_PRODUCTS,...BATCH18_CATALOG_PRODUCTS,...BATCH19_CATALOG_PRODUCTS,...BATCH20_CATALOG_PRODUCTS,...BATCH21_CATALOG_PRODUCTS,...BATCH22_CATALOG_PRODUCTS,...BATCH23_CATALOG_PRODUCTS,...BATCH24_CATALOG_PRODUCTS,...BATCH25_CATALOG_PRODUCTS,...BATCH26_CATALOG_PRODUCTS,...BATCH27_CATALOG_PRODUCTS,...(window.CATALOG_PRODUCTS_BATCH28||[]),...(window.CATALOG_PRODUCTS_BATCH29||[]),...(window.CATALOG_PRODUCTS_BATCH30||[]),...(window.CATALOG_PRODUCTS_BATCH31||[]),...(window.CATALOG_PRODUCTS_BATCH32||[]),...(window.CATALOG_PRODUCTS_BATCH33||[]),...(window.CATALOG_PRODUCTS_BATCH34||[]),...(window.CATALOG_PRODUCTS_BATCH35||[]),...(window.CATALOG_PRODUCTS_BATCH36||[]),...(window.CATALOG_PRODUCTS_BATCH37||[]),...(window.CATALOG_PRODUCTS_BATCH38||[]),...(window.CATALOG_PRODUCTS_BATCH39||[]),...(window.CATALOG_PRODUCTS_BATCH40||[]),...(window.CATALOG_PRODUCTS_BATCH41||[]),...(window.CATALOG_PRODUCTS_BATCH42||[]),...(window.CATALOG_PRODUCTS_BATCH43||[]),...(window.CATALOG_PRODUCTS_BATCH99||[])].map(p=>({...p,category:p.pdfCategory||CATALOG_SECTION_BY_ID[p.id]||p.category,price:Number(p.price)||0,variants:(p.variants||[]).map(v=>({...v,price:Number(v.price)||0}))}));
+const CATALOG_PRODUCTS=BATCH_LIST.flat().map(p=>({...p,category:p.pdfCategory||CATALOG_SECTION_BY_ID[p.id]||p.category,price:Number(p.price)||0,variants:(p.variants||[]).map(v=>({...v,price:Number(v.price)||0}))}));
 const ALL_PRODUCTS=[...PRODUCTS,...CATALOG_PRODUCTS];
 
 const $ = s => document.querySelector(s);
@@ -333,8 +334,6 @@ function showImageFromTarget(target){const crop=target.dataset.zoomCols?{cols:Nu
 function orderData(){const fd=new FormData($('#checkoutForm'));return cleanCustomer(Object.fromEntries(fd.entries()))}
 function validateForm(){const form=$('#checkoutForm'),data=orderData();Object.entries(data).forEach(([key,value])=>{form.elements.namedItem(key).value=value});return form.reportValidity()}
 function wrapText(text,max=63){const words=pdfText(text).split(/\s+/);const lines=[];let line='';for(const word of words){if((line+' '+word).trim().length>max){lines.push(line);line=word}else line=(line+' '+word).trim()}if(line)lines.push(line);return lines}
-// The purchase presentation comes before any wholesale packing information.
-// A bag followed by “caja x 12” is sold by bag, not by box.
 function saleUnit(p,name){
   const variant=variantFor(p,name);
   if(variant?.saleUnit||p?.saleUnit)return variant?.saleUnit||p.saleUnit;
