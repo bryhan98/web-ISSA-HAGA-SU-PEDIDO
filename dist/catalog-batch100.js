@@ -92,7 +92,7 @@
         code: "0009",
         price: 25700,
         presentation: "Caja x 20 unidades · 26 g c/u",
-        image: "assets/catalog/variants/felfort-dos-corazones-caja-20-20261002.png"
+        image: "assets/catalog/variants/felfort-dos-corazones-caja-20261002.png"
       }
     ];
   }
@@ -221,6 +221,26 @@
           src: surtidoImg
         }));
       }
+    }
+  }
+
+  // Corrección de imagen para variante Aireado Leche 55 g (Cofler Chocolates)
+  for (const p of [...products, ...extra]) {
+    const aireadoImg = "assets/catalog/variants/cofler-aireado-leche-55g.jpg";
+    if (Array.isArray(p.variants)) {
+      for (const v of p.variants) {
+        if (/aireado\s*leche\s*55\s*g/i.test(v.name || "")) {
+          v.image = aireadoImg;
+        }
+      }
+    }
+    if (Array.isArray(p.coverImages)) {
+      p.coverImages = p.coverImages.map((img) =>
+        /aireado\s*leche\s*55\s*g/i.test(img.label || "") ||
+        /Chocolate-Cofler-Aireado-55-Gr/i.test(img.src || "")
+          ? { ...img, src: aireadoImg }
+          : img
+      );
     }
   }
 
