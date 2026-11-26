@@ -205,5 +205,24 @@
     }
   }
 
+  // Corrección de imagen para Galletitas Surtido Diversión (código 0524 / catalog-pdf-0524)
+  for (const p of [...products, ...extra]) {
+    const isSurtidoDiversion =
+      p.id === "catalog-pdf-0524" ||
+      p.code === "0524" ||
+      (Array.isArray(p.codes) && p.codes.includes("0524"));
+
+    if (isSurtidoDiversion) {
+      const surtidoImg = "assets/catalog/surtido-diversion.jpg";
+      p.image = surtidoImg;
+      if (Array.isArray(p.coverImages) && p.coverImages.length > 0) {
+        p.coverImages = p.coverImages.map((img) => ({
+          ...img,
+          src: surtidoImg
+        }));
+      }
+    }
+  }
+
   window.CATALOG_PRODUCTS_BATCH100 = extra;
 })();
