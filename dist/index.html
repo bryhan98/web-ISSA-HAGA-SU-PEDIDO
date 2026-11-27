@@ -74,7 +74,7 @@
       <div class="catalog-tools">
         <label class="search-box">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-          <input id="searchInput" type="search" placeholder="Buscar producto, marca o código..." autocomplete="off">
+          <input id="searchInput" type="search" maxlength="100" placeholder="Buscar producto, marca o código..." autocomplete="off">
         </label>
         <div class="chips" id="categoryChips" aria-label="Filtrar por categoría"></div>
       </div>
@@ -106,7 +106,7 @@
       <div class="catalog-tools">
         <label class="search-box">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-          <input id="catalogSearchInput" type="search" placeholder="Buscar en el catálogo por producto, marca o código..." autocomplete="off">
+          <input id="catalogSearchInput" type="search" maxlength="100" placeholder="Buscar en el catálogo por producto, marca o código..." autocomplete="off">
         </label>
         <div class="chips" id="catalogCategoryChips" aria-label="Filtrar catálogo por categoría"></div>
       </div>
@@ -151,7 +151,7 @@
   <footer>
     <a class="brand footer-brand" href="#inicio"><span class="brand-logo-box"><img src="assets/issa-logo.png" alt="Distribuidora ISSA"></span></a>
     <p>Tu negocio, nuestra prioridad.</p>
-    <small>© 2026 Distribuidora ISSA · Todos los derechos reservados · Creado por Braian Lezcano · Pedidos: <a href="https://wa.me/5491168259465" target="_blank" rel="noopener">+54 9 11 6825-9465</a></small>
+    <small>© 2026 Distribuidora ISSA · Todos los derechos reservados · Creado por Braian Lezcano · Pedidos: <a href="https://wa.me/5491168259465" target="_blank" rel="noopener noreferrer">+54 9 11 6825-9465</a></small>
   </footer>
 
   <button class="mobile-cart" id="mobileCart" type="button"><span>Ver mi pedido</span><b id="mobileCartCount">0</b></button>
@@ -186,12 +186,12 @@
       <p class="modal-intro">Estos datos aparecerán en la boleta para que el vendedor pueda revisar y confirmar el pedido.</p>
       <div class="form-grid">
         <label class="full"><span>Ponga el nombre de su vendedor *</span><input name="seller" required maxlength="60" placeholder="Ponga el nombre de su vendedor" autocomplete="off"></label>
-        <label><span>Nombre y apellido *</span><input name="name" required placeholder="Ej. Juan Pérez" autocomplete="name"></label>
-        <label><span>Comercio *</span><input name="business" required placeholder="Ej. Kiosco El Sol" autocomplete="organization"></label>
-        <label><span>Teléfono *</span><input name="phone" required inputmode="tel" placeholder="11 1234 5678" autocomplete="tel"></label>
-        <label><span>Localidad *</span><input name="city" required placeholder="Ej. Merlo" autocomplete="address-level2"></label>
-        <label class="full"><span>Dirección de entrega</span><input name="address" placeholder="Calle, número y entrecalles" autocomplete="street-address"></label>
-        <label class="full"><span>Observaciones generales</span><textarea name="notes" rows="3" placeholder="Horarios, referencias o aclaraciones..."></textarea></label>
+        <label><span>Nombre y apellido *</span><input name="name" required maxlength="80" placeholder="Ej. Juan Pérez" autocomplete="name"></label>
+        <label><span>Comercio *</span><input name="business" required maxlength="80" placeholder="Ej. Kiosco El Sol" autocomplete="organization"></label>
+        <label><span>Teléfono *</span><input name="phone" required maxlength="30" inputmode="tel" placeholder="11 1234 5678" autocomplete="tel"></label>
+        <label><span>Localidad *</span><input name="city" required maxlength="60" placeholder="Ej. Merlo" autocomplete="address-level2"></label>
+        <label class="full"><span>Dirección de entrega</span><input name="address" maxlength="120" placeholder="Calle, número y entrecalles" autocomplete="street-address"></label>
+        <label class="full"><span>Observaciones generales</span><textarea name="notes" rows="3" maxlength="500" placeholder="Horarios, referencias o aclaraciones..."></textarea></label>
       </div>
       <div class="pending-number"><b>Elegí cómo enviarlo</b><span>El pedido escrito va directo al vendedor. Para mandar la boleta PDF, el celular abrirá el menú Compartir: elegí WhatsApp y el chat del +54 9 11 6825-9465.</span></div>
       <div class="checkout-actions">
@@ -233,7 +233,7 @@
     <div class="variant-list" id="variantList"></div>
     <label class="variant-note">
       <span>Aclaración opcional</span>
-      <input id="variantNote" type="text" placeholder="Ej. surtido, sin reemplazo, consultar stock">
+      <input id="variantNote" type="text" maxlength="120" placeholder="Ej. surtido, sin reemplazo, consultar stock">
     </label>
     <div class="variant-footer">
       <div><span>Total seleccionado</span><strong id="variantTotalQty">0 unidades</strong></div>
